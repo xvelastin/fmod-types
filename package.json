@@ -1,0 +1,34 @@
+{
+    "name": "fmod-types",
+    "version": "0.1.0",
+    "description": "Typescript Definitions for the  [FMOD Javascript Scripting API](https://www.fmod.com/docs/2.03/studio/scripting-api-reference.html).",
+    "main": "",
+    "scripts": {
+        "linter": "npx @biomejs/biome lint fmod.d.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "files": [
+        "types/**"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/michaelhartung/fmod-types.git"
+    },
+    "keywords": [
+        "fmod",
+        "scripting",
+        "typescript",
+        "types",
+        "tools"
+    ],
+    "author": "Michael Hartung",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/michaelhartung/fmod-types/issues"
+    },
+    "homepage": "https://hartung.studio/project/fmod-types",
+    "devDependencies": {
+        "@biomejs/biome": "1.7.2",
+        "@types/node": "^20.12.8"
+    }
+}

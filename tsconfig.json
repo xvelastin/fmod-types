@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "CommonJS",
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "noEmit": true,
+        "types": [],
+        "noUncheckedIndexedAccess": true,
+    },
+    "files": [ "fmod.d.ts" ]
+}
