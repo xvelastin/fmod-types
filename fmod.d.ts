@@ -144,7 +144,7 @@ declare namespace Fmod {
     }
 
     interface ChannelMixEffect extends MixerEffect {
-        outputGrouping: EChannelMixEffectOutputGrouping;
+        outputGrouping: EChannelMixEffectOutputGrouping[keyof EChannelMixEffectOutputGrouping];
         gain00: number;
         gain01: number;
         gain02: number;
@@ -222,7 +222,7 @@ declare namespace Fmod {
     }
 
     interface CommandSound extends Sound {
-        commandType: ECommandType;
+        commandType: ECommandType[keyof ECommandType];
         targetValue: number;
         commandTarget: CommandTarget;
     }
@@ -326,18 +326,18 @@ declare namespace Fmod {
         mixerStripShowsSends: boolean;
         mixerStripShowsMacros: boolean;
         mixerStripShowsOutputs: boolean;
-        defaultProfilerGraphType: EProfilerGraphType;
-        profilerTableValueMode: EProfilerTableValueMode;
+        defaultProfilerGraphType: EProfilerGraphType[keyof EProfilerGraphType];
+        profilerTableValueMode: EProfilerTableValueMode[keyof EProfilerTableValueMode];
         profilerTableVisibleColumns: string[];
         // biome-ignore lint/suspicious/noExplicitAny: unclear where this is set
         profilerAutomaticScopeInMode: any;
         autoSaveEnabled: boolean;
-        startupMode: EStartupMode;
-        editorScrollModeNoModifier: EScrollMode;
-        editorScrollModeShiftModifier: EScrollMode;
-        editorScrollModeAltModifier: EScrollMode;
-        editorScrollModeControlModifier: EScrollMode;
-        birdsEyeDragMode: EBirdsEyeDragMode;
+        startupMode: EStartupMode[keyof EStartupMode];
+        editorScrollModeNoModifier: EScrollMode[keyof EScrollMode];
+        editorScrollModeShiftModifier: EScrollMode[keyof EScrollMode];
+        editorScrollModeAltModifier: EScrollMode[keyof EScrollMode];
+        editorScrollModeControlModifier: EScrollMode[keyof EScrollMode];
+        birdsEyeDragMode: EBirdsEyeDragMode[keyof EBirdsEyeDragMode];
         buildThreadCount: number;
         emailAddress: string;
         recentFiles: string[];
@@ -349,17 +349,17 @@ declare namespace Fmod {
         recentImportFolder: string;
         absoluteMouseModeEnabled: boolean;
         analyticsEnabled: boolean;
-        timeDisplayMode: ETimeDisplayMode;
+        timeDisplayMode: ETimeDisplayMode[keyof ETimeDisplayMode];
         keyboardShortcuts: Record<number, string>; // NOTE: verify 
         uiDefaultTrackHeight: number;
-        uiAutomationTracksVisible: EUIAutomationTracksVisible;
-        uiModulationDrawerVisible: EUIModulationDrawerVisible;
-        uiTriggerBehaviorDrawerVisible: EUITriggerBehaviorDrawerVisible;
+        uiAutomationTracksVisible: EUIAutomationTracksVisible[keyof EUIAutomationTracksVisible];
+        uiModulationDrawerVisible: EUIModulationDrawerVisible[keyof EUIModulationDrawerVisible];
+        uiTriggerBehaviorDrawerVisible: EUITriggerBehaviorDrawerVisible[keyof EUITriggerBehaviorDrawerVisible];
         uiView3DOrtho: boolean;
         uiView3DFront: boolean;
         uiView3DSize: number;
-        linkedAssetsRenderMode: ELinkedAssetsRenderMode;
-        linkedAssetsRemovalMode: ELinkedAssetsRemovalMode;
+        linkedAssetsRenderMode: ELinkedAssetsRenderMode[keyof ELinkedAssetsRenderMode];
+        linkedAssetsRemovalMode: ELinkedAssetsRemovalMode[keyof ELinkedAssetsRemovalMode];
         reaperApplicationPath: string;
         eventsBrowserSharesSelection: boolean;
     }
@@ -383,11 +383,11 @@ declare namespace Fmod {
     interface EncodableAsset extends Asset, Encodable {}
 
     interface EncodingSetting extends ManagedObject {
-        encodingFormat: EEncodingFormat;
+        encodingFormat: EEncodingFormat[keyof EEncodingFormat];
         quality: number;
         sampleRateMode: ESampleRateMode;
         sampleRate: number;
-        loadingMode: ELoadingMode;
+        loadingMode: ELoadingMode[keyof ELoadingMode];
         platform: Platform;
         encodable: Encodable;
     }
@@ -395,7 +395,7 @@ declare namespace Fmod {
     interface Event extends EventFolder, Selector, Taggable, CommandTarget,
         ProfilerTrackable, ProfilerGraphable {
         isDefault: boolean;
-        outputFormat: EChannelFormat;
+        outputFormat: EChannelFormat[keyof EChannelFormat];
         uiMarkerTracksVisible: boolean;
         uiMaxMarkerTracksVisible: boolean;
         uiLastParameterSelection: Parameter;
@@ -441,7 +441,7 @@ declare namespace Fmod {
     interface EventAutomatableProperties extends AutomatableObject {
         isPersistent: boolean;
         maxVoices: number;
-        voiceStealing: EVoiceStealing;
+        voiceStealing: EVoiceStealing[keyof EVoiceStealing];
         priority: number;
         dopplerEnabled: boolean;
         dopplerScale: number;
@@ -455,7 +455,7 @@ declare namespace Fmod {
     }
 
     interface EventCondition extends TriggerCondition {
-        eventState: EEventState;
+        eventState: EEventState[keyof EEventState];
     }
 
     interface EventFolder extends Folder<Event> {}
@@ -513,7 +513,7 @@ declare namespace Fmod {
     interface GameParameter extends AutomatableObject,
         ParameterPrototype, CommandTarget,
         Selectable, ProfilerGraphable {
-        parameterType: EParameterType;
+        parameterType: EParameterType[keyof EParameterType];
         minimum: number;
         maximum: number;
         enumerationLabels: string[];
@@ -563,7 +563,7 @@ declare namespace Fmod {
     }
 
     interface LFOModulator extends Modulator {
-        shape: ELFOShape;
+        shape: ELFOShape[keyof ELFOShape];
         isTempoSync: boolean;
         rate: number;
         beats: number;
@@ -597,10 +597,10 @@ declare namespace Fmod {
     }
 
     interface LoudnessMeter extends MixerEffect {
-        meterRange: ELoudnessMeterRange;
-        meterMode: ELoudnessMeterMode;
+        meterRange: ELoudnessMeterRange[keyof ELoudnessMeterRange];
+        meterMode: ELoudnessMeterMode[keyof ELoudnessMeterMode];
         loudnessTarget: number;
-        loudnessScale: ELoudnessMeterScale;
+        loudnessScale: ELoudnessMeterScale[keyof ELoudnessMeterScale];
     }
 
     interface LowpassEffect extends MixerEffect {
@@ -717,7 +717,7 @@ declare namespace Fmod {
     interface MasterTrack extends GroupTrack {}
 
     interface MeteringSettings extends ManagedObject {
-        meterChannelOrdering: EMeteringChannelOrder;
+        meterChannelOrdering: EMeteringChannelOrder[keyof EMeteringChannelOrder];
     }
 
     interface MidiControlSurfaceProtocol extends ControlSurfaceProtocol {
@@ -739,7 +739,7 @@ declare namespace Fmod {
     }
 
     interface MixerBus extends MixerStrip {
-        overridingInputFormat: EChannelFormat;
+        overridingInputFormat: EChannelFormat[keyof EChannelFormat];
         effectChain: MixerBusEffectChain;
         panner: MixerBusPanner;
         output: MixerGroup;
@@ -766,7 +766,7 @@ declare namespace Fmod {
 
     interface MixerGroup extends MixerBus {
         maxInstances: number;
-        instanceStealing: EInstanceStealing;
+        instanceStealing: EInstanceStealing[keyof EInstanceStealing];
         input: MixerBus[] | MixerSend[];
     }
 
@@ -778,12 +778,12 @@ declare namespace Fmod {
         name: string;
         pitch: number;
         maxInstances: number;
-        instanceStealing: EInstanceStealing;
+        instanceStealing: EInstanceStealing[keyof EInstanceStealing];
         mixer: Mixer;
     }
 
     interface MixerPort extends MixerGroup {
-        portType: EMixerPortType;
+        portType: EMixerPortType[keyof EMixerPortType];
         mixer: Mixer;
     }
 
@@ -793,7 +793,7 @@ declare namespace Fmod {
 
     interface MixerSend extends MixerEffect {
         level: number;
-        inputFormat: EChannelFormat;
+        inputFormat: EChannelFormat[keyof EChannelFormat];
         mixerReturn: MixerReturn;
     }
 
@@ -822,13 +822,13 @@ declare namespace Fmod {
         isCutoff: boolean;
         start: number;
         length: number;
-        delayType: EDelayType;
+        delayType: EDelayType[keyof EDelayType];
         minimumTimeDelay: number;
         maximumTimeDelay: number;
         quantizationInterval: EQuantizationInterval;
         startOffset: number;
         timelockedOffset: number;
-        voiceStealing: EVoiceStealing;
+        voiceStealing: EVoiceStealing[keyof EVoiceStealing];
         maxVoices: number;
         name: string;
         fadeInCurve: FadeCurve;
@@ -839,7 +839,7 @@ declare namespace Fmod {
     }
 
     interface MultiSound extends Sound, Loopable, Selector {
-        playlistMode: EPlaylistMode;
+        playlistMode: EPlaylistMode[keyof EPlaylistMode];
         // biome-ignore lint/suspicious/noExplicitAny: unclear what this is
         playbackMode: any;
         selectables: Selectable[];
@@ -849,11 +849,11 @@ declare namespace Fmod {
     }
 
     interface MultibandEqEffect extends MixerEffect {
-        filterTypeA: EMultibandEqEffectFilterType;
-        filterTypeB: EMultibandEqEffectFilterType;
-        filterTypeC: EMultibandEqEffectFilterType;
-        filterTypeD: EMultibandEqEffectFilterType;
-        filterTypeE: EMultibandEqEffectFilterType;
+        filterTypeA: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
+        filterTypeB: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
+        filterTypeC: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
+        filterTypeD: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
+        filterTypeE: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
         frequencyA: number;
         frequencyB: number;
         frequencyC: number;
@@ -900,11 +900,11 @@ declare namespace Fmod {
         stereoRightPan: number;
         surroundPanDirection: number;
         surroundLFELevel: number;
-        stereoToSurroundPanMode: EStereoToSurroundPanMode;
+        stereoToSurroundPanMode: EStereoToSurroundPanMode[keyof EStereoToSurroundPanMode];
         surroundStereoSeparation: number;
         surroundStereoAxis: number;
         surroundHeightBlend: number;
-        overridingOutputFormat: EChannelFormat;
+        overridingOutputFormat: EChannelFormat[keyof EChannelFormat];
         disabledSpeakers: number;
         LFEUpmixEnabled: number;
     }
@@ -976,7 +976,7 @@ declare namespace Fmod {
         hardwareType: any;
         name: string;
         subDirectory: string;
-        speakerFormat: EPlatformSpeakerFormat;
+        speakerFormat: EPlatformSpeakerFormat[keyof EPlatformSpeakerFormat];
         buildMetadataOnly: boolean;
         encodingSettings: EncodingSetting[];
         uiActivePlatformOwner: ProjectSettings;
@@ -1067,12 +1067,12 @@ declare namespace Fmod {
     }
 
     interface ProxyEffect extends MixerEffect {
-        inputFormat: EChannelFormat; // NOTE: this is a guess
+        inputFormat: EChannelFormat[keyof EChannelFormat]; // NOTE: this is a guess
     }
 
     interface Quantizable extends ManagedObject {
         quantizationInterval: EQuantizationInterval;
-        transitionOffset: ETransitionOffset;
+        transitionOffset: ETransitionOffset[keyof ETransitionOffset];
     }
 
     interface RandomizerModulator extends Modulator {
@@ -1164,7 +1164,7 @@ declare namespace Fmod {
     }
 
     interface SidechainModulator extends Modulator, SidechainTarget {
-        levelMode: ESidechainModulatorLevelMode;
+        levelMode: ESidechainModulatorLevelMode[keyof ESidechainModulatorLevelMode];
         amount: number;
         attackTime: number;
         releaseTime: number;
@@ -1185,7 +1185,7 @@ declare namespace Fmod {
     }
 
     interface Snapshot extends Event {
-        behavior: ESnapshotBehavior;
+        behavior: ESnapshotBehavior[keyof ESnapshotBehavior];
         snapshotMasterTrack: SnapshotMasterTrack;
         snapshotProperties: SnapshotProperty[];
         snapshotTracks: SnapshotTrack[];
@@ -1226,9 +1226,9 @@ declare namespace Fmod {
 
     interface SoundScatterer extends Sound {
         polyphony: number;
-        soundStealing: ESoundScattererSoundStealing;
+        soundStealing: ESoundScattererSoundStealing[keyof ESoundScattererSoundStealing];
         totalSounds: number;
-        spawnDelayType: EDelayType;
+        spawnDelayType: EDelayType[keyof EDelayType];
         minimumTimeBetweenSounds: number;
         maximumTimeBetweenSounds: number;
         spawnQuantizationInterval: EQuantizationInterval;
@@ -1245,11 +1245,11 @@ declare namespace Fmod {
 
     interface SpatialEffect extends MixerEffect {
         bypass: boolean;
-        distanceRolloffType: EDistanceRolloffType;
+        distanceRolloffType: EDistanceRolloffType[keyof EDistanceRolloffType];
         minimumDistance: number;
         maximumDistance: number;
         overrideRange: boolean;
-        extentMode: EExtentMode;
+        extentMode: EExtentMode[keyof EExtentMode];
         soundSize: number;
         minimumExtent: number;
     }
@@ -1262,7 +1262,7 @@ declare namespace Fmod {
         userPanExtent: number;
         userLFELevel: number;
         LFEUpmixEnabled: boolean;
-        stereoToSurroundUserPanMode: EStereoToSurroundPanMode;
+        stereoToSurroundUserPanMode: EStereoToSurroundPanMode[keyof EStereoToSurroundPanMode];
         userStereoSeparation: number;
         userStereoAxis: number;
     }
@@ -1323,7 +1323,7 @@ declare namespace Fmod {
         transmitMode: boolean;
         level: number;
         channel: number;
-        speakerMode: ESpeakerMode;
+        speakerMode: ESpeakerMode[keyof ESpeakerMode];
     }
 
     interface TransitionDestination extends ManagedObject {
@@ -1377,7 +1377,7 @@ declare namespace Fmod {
     interface Triggerable extends ManagedObject {
         triggerProbabilityEnabled: boolean;
         triggerProbability: number;
-        triggerConditionMode: ETriggerConditionMode;
+        triggerConditionMode: ETriggerConditionMode[keyof ETriggerConditionMode];
         triggerConditions: TriggerCondition[];
         addParameterCondition(parameter: ParameterPreset | GameParameter, min: number, max: number | undefined): ParameterCondition;
     }
@@ -1453,10 +1453,10 @@ declare namespace Fmod {
     interface MenuItemDescription {
         name: string;
         execute: () => void;
-        keySequence: string;
-        isEnabled: boolean;
-        isChecked: boolean;
-        subMenuItems: MenuItemDescription[];
+        keySequence?: string;
+        isEnabled?: boolean;
+        isChecked?: boolean;
+        subMenuItems?: MenuItemDescription[];
     }
 
     interface Menu {
@@ -1466,51 +1466,54 @@ declare namespace Fmod {
     }
 
     interface UIWidgetDescription {
-        widgetType: EUIWidgetType;
         widgetId: string;
-        isVisible: boolean;
-        isEnabled: boolean;
-        minimumWidth: number;
-        minimumHeight: number;
-        sizePolicy: EUISizePolicy;
-        alignment: Readonly<EUIAlignment>;
+        isVisible?: boolean;
+        isEnabled?: boolean;
+        minimumWidth?: number;
+        minimumHeight?: number;
+        sizePolicy?: EUISizePolicy[keyof EUISizePolicy];
+        alignment?: Readonly<EUIAlignment[keyof EUIAlignment]>;
         stretchFactor?: number;
         row?: Readonly<number>;
         column?: Readonly<number>;
         rowSpan?: Readonly<number>;
         columnSpan?: Readonly<number>;
-        onConstructed: () => void;
-        onTimerEvent: (timerId: string) => void;
+        onConstructed?: () => void;
+        onTimerEvent?: (timerId: string) => void;
     }
 
     interface UIRootWidget extends UIWidgetDescription {
         windowTitle: string;
-        windowWidth: number;
-        windowHeight: number;
-        onClose: () => void;
+        windowWidth?: number;
+        windowHeight?: number;
+        onClose?: () => void;
     }
 
     interface UIWidgetLabel extends UIWidgetDescription {
+        widgetType: EUIWidgetType["Label"];
         text: string;
         wordWrap: boolean;
     }
 
     interface UIWidgetPushButton extends UIWidgetDescription {
+        widgetType: EUIWidgetType["PushButton"];
         text: string;
         onClicked: () => void;
     }
 
     interface UIWidgetLineEdit extends UIWidgetDescription {
-        text: string;
+        widgetType: EUIWidgetType["LineEdit"];
+        // text: () => string; // TODO
         isReadOnly: boolean;
-        echoMode: EUIEchoMode;
+        echoMode: EUIEchoMode[keyof EUIEchoMode];
         onTextEdited: () => void;
         onEditingFinished: () => void;
     }
 
     interface UIWidgetTextEdit extends UIWidgetDescription {
-        text: string;
-        html: string;
+        widgetType: EUIWidgetType["TextEdit"];
+        // text: () => string; // TODO
+        // html: () => string; // TODO
         isReadOnly: boolean;
         onTextEdited: () => void;
         onEditingFinished: () => void;
@@ -1523,8 +1526,9 @@ declare namespace Fmod {
     }
 
     interface UIWidgetComboBox extends UIWidgetDescription {
+        widgetType: EUIWidgetType["ComboBox"];
         items: UIWidgetComboBoxItem[];
-        currentIndex: number;
+        // currentIndex: () => number; // TODO
         currentText: Readonly<string>;
         // biome-ignore lint/suspicious/noExplicitAny: this can be anything
         currentUserData: Readonly<any>;
@@ -1532,8 +1536,9 @@ declare namespace Fmod {
     }
 
     interface UIWidgetCheckBox extends UIWidgetDescription {
+        widgetType: EUIWidgetType["CheckBox"];
         text: string;
-        isChecked: boolean;
+        // isChecked: () => boolean; // TODO
         onToggled: () => void;
     }
 
@@ -1543,36 +1548,48 @@ declare namespace Fmod {
     }
 
     interface UIWidgetSlider extends UIWidgetDescription {
-        orientation: EUIOrientation;
-        value: number;
+        widgetType: EUIWidgetType["Slider"];
+        orientation: EUIOrientation[keyof EUIOrientation];
+        // value: () => number; TODO
         range: UIWidgetRange;
         onValueChanged: () => void;
     }
 
     interface UIWidgetSpinBox extends UIWidgetDescription {
-        value: number;
+        widgetType: EUIWidgetType["SpinBox"];
+        // value: () => number; // TODO
         range: UIWidgetRange;
         onValueChanged: () => void;
     }
 
     interface UIWidgetPathLineEdit extends UIWidgetDescription {
-        text: string;
+        widgetType: EUIWidgetType["PathLineEdit"];
+        // text: () => string; // TODO
         label: Readonly<string>;
         caption: Readonly<string>
-        pathType: Readonly<EUIPathType>;
+        pathType: Readonly<EUIPathType[keyof EUIPathType]>;
         onEditingFinished: () => void;
     }
 
-    interface UIWidgetLayout {
-        layout: UIWidgetLayout;
-        items: UIWidgetDescription[];
-        contentsMargins: { 
+    interface UIWidgetCallback {
+        (): void;
+        closeDialog: () => void;
+    }
+
+    interface UIWidgetLayout extends UIWidgetDescription {
+        widgetType: EUIWidgetType["Layout"];
+        layout: EUILayoutType[keyof EUILayoutType];
+        items: Array<UIWidgetCheckBox | UIWidgetComboBox | UIWidgetLabel 
+            | UIWidgetLayout | UIWidgetLineEdit | UIWidgetPathLineEdit 
+            | UIWidgetPushButton | UIWidgetSlider | UIWidgetSpinBox 
+            | UIWidgetTextEdit>;
+        contentsMargins?: { 
             left: number, 
             top: number, 
             right: number, 
             bottom: number 
         };
-        spacing: number;
+        spacing?: number;
     }
 
     interface UIDialog extends UIRootWidget, UIWidgetLayout {}
@@ -1582,7 +1599,7 @@ declare namespace Fmod {
         showModelessDialog(description: UIDialog): void;
         widgetType: EUIWidgetType;
         layoutType: EUILayoutType;
-        alignement: EUIAlignment;
+        alignment: EUIAlignment;
         sizePolicy: EUISizePolicy;
         orientation: EUIOrientation;
         echoMode: EUIEchoMode;
@@ -1596,9 +1613,218 @@ declare namespace Fmod {
 //  ██      ██   ██  ██████   █████  ███████  ██████    ██    
 
     interface Project {
-        workspace: ManagedObject;
+        workspace: Workspace;
         model: {
-            [key in EntityName]: Entity<EntityName>
+            ADSRModulator: Entity<ADSRModulator>,
+            ActionSheet: Entity<ActionSheet>,
+            Asset: Entity<Asset>,
+            AudioFile: Entity<AudioFile>,
+            AudioSettings: Entity<AudioSettings>,
+            AudioTable: Entity<AudioTable>,
+            AudioTrack: Entity<AudioTrack>,
+            AutomatableObject: Entity<AutomatableObject>,
+            AutomationCurve: Entity<AutomationCurve>,
+            PropertyDescription: Entity<PropertyDescription>,
+            AutomationPoint: Entity<AutomationPoint>,
+            AutomationTrack: Entity<AutomationTrack>,
+            Automator: Entity<Automator>,
+            AutopitchModulator: Entity<AutopitchModulator>,
+            Bank: Entity<Bank>,
+            BankFolder: Entity<BankFolder>,
+            BoolPluginParameter: Entity<BoolPluginParameter>,
+            ChannelMixEffect: Entity<ChannelMixEffect>,
+            ChorusEffect: Entity<ChorusEffect>,
+            Colorable: Entity<Colorable>,
+            CommandSound: Entity<CommandSound>,
+            CommandTarget: Entity<CommandTarget>,
+            CompressorEffect: Entity<CompressorEffect>,
+            ControlSurface: Entity<ControlSurface>,
+            ControlSurfaceCustomBinding: Entity<ControlSurfaceCustomBinding>,
+            ControlSurfaceCustomBindings: Entity<ControlSurfaceCustomBindings>,
+            ControlSurfaceProtocol: Entity<ControlSurfaceProtocol>,
+            ConvolutionReverbEffect: Entity<ConvolutionReverbEffect>,
+            DAWAsset: Entity<DAWAsset>,
+            DAWProject: Entity<DAWProject>,
+            DataFile: Entity<DataFile>,
+            DataPluginParameter: Entity<DataPluginParameter>,
+            DataReferee: Entity<DataReferee>,
+            DelayEffect: Entity<DelayEffect>,
+            DistortionEffect: Entity<DistortionEffect>,
+            EditorSettings: Entity<EditorSettings>,
+            EffectChain: Entity<EffectChain>,
+            EffectPreset: Entity<EffectPreset>,
+            EffectPresetFolder: Entity<EffectPresetFolder>,
+            Encodable: Entity<Encodable>,
+            EncodableAsset: Entity<EncodableAsset>,
+            EncodingSetting: Entity<EncodingSetting>,
+            Event: Entity<Event>,
+            EventAutomatableProperties: Entity<EventAutomatableProperties>,
+            EventCondition: Entity<EventCondition>,
+            EventFolder: Entity<EventFolder>,
+            EventMixer: Entity<EventMixer>,
+            EventMixerGroup: Entity<EventMixerGroup>,
+            EventMixerMaster: Entity<EventMixerMaster>,
+            EventMixerReturn: Entity<EventMixerReturn>,
+            EventSound: Entity<EventSound>,
+            FadeCurve: Entity<FadeCurve>,
+            FlangerEffect: Entity<FlangerEffect>,
+            FloatPluginParameter: Entity<FloatPluginParameter>,
+            Folder: Entity<Folder<any>>,
+            GainEffect: Entity<GainEffect>,
+            GameParameter: Entity<GameParameter>,
+            GroupTrack: Entity<GroupTrack>,
+            HighpassEffect: Entity<HighpassEffect>,
+            HighpassSimpleEffect: Entity<HighpassSimpleEffect>,
+            ITEchoEffect: Entity<ITEchoEffect>,
+            IntPluginParameter: Entity<IntPluginParameter>,
+            LFOModulator: Entity<LFOModulator>,
+            LimiterEffect: Entity<LimiterEffect>,
+            Locale: Entity<Locale>,
+            LoopRegion: Entity<LoopRegion>,
+            Loopable: Entity<Loopable>,
+            LoudnessMeter: Entity<LoudnessMeter>,
+            LowpassEffect: Entity<LowpassEffect>,
+            LowpassSimpleEffect: Entity<LowpassSimpleEffect>,
+            MackieControlSurface: Entity<MackieControlSurface>,
+            MackieExtendedControlSurface: Entity<MackieExtendedControlSurface>,
+            ManagedObject: Entity<ManagedObject>,
+            ManagedProperty: Entity<ManagedProperty>,
+            ManagedPropertyMap: Entity<ManagedPropertyMap>,
+            ManagedRelationship: Entity<ManagedRelationship>,
+            ManagedRelationshipMap: Entity<ManagedRelationshipMap>,
+            Marker: Entity<Marker>,
+            MarkerTrack: Entity<MarkerTrack>,
+            MasterAssetFolder: Entity<MasterAssetFolder>,
+            MasterBankFolder: Entity<MasterBankFolder>,
+            MasterEffectPresetFolder: Entity<MasterEffectPresetFolder>,
+            MasterEventFolder: Entity<MasterEventFolder>,
+            MasterParameterPresetFolder: Entity<MasterParameterPresetFolder>,
+            MasterSandboxFolder: Entity<MasterSandboxFolder>,
+            MasterTagFolder: Entity<MasterTagFolder>,
+            MasterTrack: Entity<MasterTrack>,
+            MeteringSettings: Entity<MeteringSettings>,
+            MidiControlSurfaceProtocol: Entity<MidiControlSurfaceProtocol>,
+            Mixer: Entity<Mixer>,
+            MixerBus: Entity<MixerBus>,
+            MixerBusEffectChain: Entity<MixerBusEffectChain>,
+            MixerBusFader: Entity<MixerBusFader>,
+            MixerBusPanner: Entity<MixerBusPanner>,
+            MixerEffect: Entity<MixerEffect>,
+            MixerGroup: Entity<MixerGroup>,
+            MixerInput: Entity<MixerInput>,
+            MixerMaster: Entity<MixerMaster>,
+            MixerPort: Entity<MixerPort>,
+            MixerReturn: Entity<MixerReturn>,
+            MixerSend: Entity<MixerSend>,
+            MixerStrip: Entity<MixerStrip>,
+            MixerVCA: Entity<MixerVCA>,
+            Modulator: Entity<Modulator>,
+            Module: Entity<Module>,
+            MultiSound: Entity<MultiSound>,
+            MultibandEqEffect: Entity<MultibandEqEffect>,
+            NamedMarker: Entity<NamedMarker>,
+            NamedWorkspaceBasedSourceControlProvider: Entity<NamedWorkspaceBasedSourceControlProvider>,
+            Notable: Entity<Notable>,
+            ObjectSpatialiserEffect: Entity<ObjectSpatialiserEffect>,
+            ObsoleteObject: Entity<ObsoleteObject>,
+            OscControlSurfaceProtocol: Entity<OscControlSurfaceProtocol>,
+            PannerEffect: Entity<PannerEffect>,
+            ParamEqEffect: Entity<ParamEqEffect>,
+            Parameter: Entity<Parameter>,
+            ParameterCondition: Entity<ParameterCondition>,
+            ParameterPreset: Entity<ParameterPreset>,
+            ParameterPresetFolder: Entity<ParameterPresetFolder>,
+            ParameterProperty: Entity<ParameterProperty>,
+            ParameterPrototype: Entity<ParameterPrototype>,
+            ParameterProxy: Entity<ParameterProxy>,
+            PerforceProvider: Entity<PerforceProvider>,
+            PitchShifterEffect: Entity<PitchShifterEffect>,
+            Platform: Entity<Platform>,
+            PlatformSpecificItem: Entity<PlatformSpecificItem>,
+            PlayPercentage: Entity<PlayPercentage>,
+            Plugin: Entity<Plugin>,
+            PluginEffect: Entity<PluginEffect>,
+            PluginOwner: Entity<PluginOwner>,
+            PluginParameter: Entity<PluginParameter>,
+            PluginSettings: Entity<PluginSettings>,
+            PluginSound: Entity<PluginSound>,
+            ProfilerFolder: Entity<ProfilerFolder>,
+            ProfilerGraph: Entity<ProfilerGraph>,
+            ProfilerGraphable: Entity<ProfilerGraphable>,
+            ProfilerRecordingMarker: Entity<ProfilerRecordingMarker>,
+            ProfilerSession: Entity<ProfilerSession>,
+            ProfilerSessionFolder: Entity<ProfilerSessionFolder>,
+            ProfilerSystemTrack: Entity<ProfilerSystemTrack>,
+            ProfilerTrack: Entity<ProfilerTrack>,
+            ProfilerTrackable: Entity<ProfilerTrackable>,
+            ProgrammerSound: Entity<ProgrammerSound>,
+            ProgrammerSoundPlaceholder: Entity<ProgrammerSoundPlaceholder>,
+            ProjectSettings: Entity<ProjectSettings>,
+            ProxyEffect: Entity<ProxyEffect>,
+            Quantizable: Entity<Quantizable>,
+            RandomizerModulator: Entity<RandomizerModulator>,
+            ReferenceableData: Entity<ReferenceableData>,
+            Region: Entity<Region>,
+            ReturnTrack: Entity<ReturnTrack>,
+            SFXReverbEffect: Entity<SFXReverbEffect>,
+            SandboxEmitter: Entity<SandboxEmitter>,
+            SandboxFolder: Entity<SandboxFolder>,
+            SandboxListener: Entity<SandboxListener>,
+            SandboxParameter: Entity<SandboxParameter>,
+            SandboxParameterOwner: Entity<SandboxParameterOwner>,
+            SandboxPositionable: Entity<SandboxPositionable>,
+            SandboxScene: Entity<SandboxScene>,
+            ScriptBasedProvider: Entity<ScriptBasedProvider>,
+            Selectable: Entity<Selectable>,
+            Selector: Entity<Selector>,
+            Sidechain: Entity<Sidechain>,
+            SidechainModulator: Entity<SidechainModulator>,
+            SidechainTarget: Entity<SidechainTarget>,
+            SilenceSound: Entity<SilenceSound>,
+            SingleSound: Entity<SingleSound>,
+            Snapshot: Entity<Snapshot>,
+            SnapshotGroup: Entity<SnapshotGroup>,
+            SnapshotList: Entity<SnapshotList>,
+            SnapshotMasterTrack: Entity<SnapshotMasterTrack>,
+            SnapshotModule: Entity<SnapshotModule>,
+            SnapshotProperty: Entity<SnapshotProperty>,
+            SnapshotTrack: Entity<SnapshotTrack>,
+            Sound: Entity<Sound>,
+            SoundScatterer: Entity<SoundScatterer>,
+            SourceControlProvider: Entity<SourceControlProvider>,
+            SpatialEffect: Entity<SpatialEffect>,
+            SpatialiserEffect: Entity<SpatialiserEffect>,
+            SslNucleusControlSurface: Entity<SslNucleusControlSurface>,
+            SustainPoint: Entity<SustainPoint>,
+            Tag: Entity<Tag>,
+            TagFolder: Entity<TagFolder>,
+            Taggable: Entity<Taggable>,
+            TempoMarker: Entity<TempoMarker>,
+            TfsProvider: Entity<TfsProvider>,
+            ThreeEQEffect: Entity<ThreeEQEffect>,
+            Timeline: Entity<Timeline>,
+            TouchOscControlSurface: Entity<TouchOscControlSurface>,
+            Track: Entity<Track>,
+            TransceiverEffect: Entity<TransceiverEffect>,
+            TransitionDestination: Entity<TransitionDestination>,
+            TransitionDestinationFadeInCurve: Entity<TransitionDestinationFadeInCurve>,
+            TransitionDestinationSound: Entity<TransitionDestinationSound>,
+            TransitionFadeCurve: Entity<TransitionFadeCurve>,
+            TransitionMarker: Entity<TransitionMarker>,
+            TransitionRegion: Entity<TransitionRegion>,
+            TransitionSourceFadeOutCurve: Entity<TransitionSourceFadeOutCurve>,
+            TransitionSourceSound: Entity<TransitionSourceSound>,
+            TransitionTimeline: Entity<TransitionTimeline>,
+            TransitionTimelineOwner: Entity<TransitionTimelineOwner>,
+            TremoloEffect: Entity<TremoloEffect>,
+            TriggerCondition: Entity<TriggerCondition>,
+            Triggerable: Entity<Triggerable>,
+            UiMixerView: Entity<UiMixerView>,
+            UserProperty: Entity<UserProperty>,
+            Workspace: Entity<Workspace>,
+            WorkspaceBasedSourceControlProvider: Entity<WorkspaceBasedSourceControlProvider>,
+            WorkspaceChangelist: Entity<WorkspaceChangelist>,
+            WorkspaceItem: Entity<WorkspaceItem<any>>
         };
         save(): boolean;
         build(options?: {
@@ -1624,8 +1850,8 @@ declare namespace Fmod {
             connect(fn: () => void): void;
             disconnect(fn: () => void): void;
         };
-        distanceRollOffType: EDistanceRolloffType;
-        parameterType: EParameterType;
+        distanceRollOffType: EDistanceRolloffType[keyof EDistanceRolloffType];
+        parameterType: EParameterType[keyof EParameterType];
         regionLoopMode: ERegionLoopMode;
     }
 
@@ -2015,6 +2241,7 @@ declare namespace Fmod {
         "IncrementParameter": 4
     };
 
+    // TODO(mhartung) where is this used?
     type EDataDropMode = { 
         "File": 0, 
         "Text": 1 
@@ -2171,8 +2398,8 @@ declare namespace Fmod {
         "Write": 8738,
         "Read": 17476
     };
-    type EPlatformSpeakerFormat = {
 
+    type EPlatformSpeakerFormat = {
         "Stereo": 0,
         "Surround_5.1": 1,
         "Surround_7.1": 2
@@ -2185,6 +2412,7 @@ declare namespace Fmod {
         "SequentialGlobalScope": 3
     };
 
+    // TODO(mhartung) where is this used
     type EProcessError = {
         "FailedToStart": 0,
         "Crashed": 1,
