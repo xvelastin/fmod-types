@@ -752,6 +752,7 @@ declare namespace Fmod {
     interface MixerBusEffectChain extends EffectChain {
         effects: MixerEffect[];
         bus: MixerBus;
+        addEffect(effectDefinition: Entity<EffectPreset> | EffectName): MixerEffect;
     }
 
     interface MixerBusFader extends MixerEffect {}
