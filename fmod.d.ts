@@ -1917,9 +1917,9 @@ declare namespace Fmod {
     interface Window {
         open(type: WindowType): void;
         navigateTo(obj: ManagedObject): void;
-        browserCurrent(tabName?: string): ManagedObject[];
+        browserCurrent(tabName?: string): ManagedObject;
         browserSelection(tabName?: string): ManagedObject[];
-        editorCurrent(): ManagedObject[];
+        editorCurrent(): ManagedObject;
         editorSelection(): ManagedObject[];
         deckCurrent(): ManagedObject;
         deckSelection(): ManagedObject[];
