@@ -1,6 +1,7 @@
 // Type definitions for the FMOD Studio Scripting API
 // Project: https://www.fmod.com/docs/2.03/studio/scripting-api-reference.html
 // Definitions by: Michael Hartung <https://hartung.studio>
+// Adapted by: Xavier Velastin <https://xaviervelastin.com/gameaudio>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare namespace Fmod {
