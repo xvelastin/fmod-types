@@ -144,7 +144,7 @@ declare namespace Fmod {
     }
 
     interface ChannelMixEffect extends MixerEffect {
-        outputGrouping: EChannelMixEffectOutputGrouping[keyof EChannelMixEffectOutputGrouping];
+        outputGrouping: EChannelMixEffectOutputGrouping;
         gain00: number;
         gain01: number;
         gain02: number;
@@ -222,7 +222,7 @@ declare namespace Fmod {
     }
 
     interface CommandSound extends Sound {
-        commandType: ECommandType[keyof ECommandType];
+        commandType: ECommandType;
         targetValue: number;
         commandTarget: CommandTarget;
     }
@@ -326,18 +326,18 @@ declare namespace Fmod {
         mixerStripShowsSends: boolean;
         mixerStripShowsMacros: boolean;
         mixerStripShowsOutputs: boolean;
-        defaultProfilerGraphType: EProfilerGraphType[keyof EProfilerGraphType];
-        profilerTableValueMode: EProfilerTableValueMode[keyof EProfilerTableValueMode];
+        defaultProfilerGraphType: EProfilerGraphType;
+        profilerTableValueMode: EProfilerTableValueMode;
         profilerTableVisibleColumns: string[];
         // biome-ignore lint/suspicious/noExplicitAny: unclear where this is set
         profilerAutomaticScopeInMode: any;
         autoSaveEnabled: boolean;
-        startupMode: EStartupMode[keyof EStartupMode];
-        editorScrollModeNoModifier: EScrollMode[keyof EScrollMode];
-        editorScrollModeShiftModifier: EScrollMode[keyof EScrollMode];
-        editorScrollModeAltModifier: EScrollMode[keyof EScrollMode];
-        editorScrollModeControlModifier: EScrollMode[keyof EScrollMode];
-        birdsEyeDragMode: EBirdsEyeDragMode[keyof EBirdsEyeDragMode];
+        startupMode: EStartupMode;
+        editorScrollModeNoModifier: EScrollMode;
+        editorScrollModeShiftModifier: EScrollMode;
+        editorScrollModeAltModifier: EScrollMode;
+        editorScrollModeControlModifier: EScrollMode;
+        birdsEyeDragMode: EBirdsEyeDragMode;
         buildThreadCount: number;
         emailAddress: string;
         recentFiles: string[];
@@ -349,17 +349,17 @@ declare namespace Fmod {
         recentImportFolder: string;
         absoluteMouseModeEnabled: boolean;
         analyticsEnabled: boolean;
-        timeDisplayMode: ETimeDisplayMode[keyof ETimeDisplayMode];
+        timeDisplayMode: ETimeDisplayMode;
         keyboardShortcuts: Record<number, string>; // NOTE: verify 
         uiDefaultTrackHeight: number;
-        uiAutomationTracksVisible: EUIAutomationTracksVisible[keyof EUIAutomationTracksVisible];
-        uiModulationDrawerVisible: EUIModulationDrawerVisible[keyof EUIModulationDrawerVisible];
-        uiTriggerBehaviorDrawerVisible: EUITriggerBehaviorDrawerVisible[keyof EUITriggerBehaviorDrawerVisible];
+        uiAutomationTracksVisible: EUIAutomationTracksVisible;
+        uiModulationDrawerVisible: EUIModulationDrawerVisible;
+        uiTriggerBehaviorDrawerVisible: EUITriggerBehaviorDrawerVisible;
         uiView3DOrtho: boolean;
         uiView3DFront: boolean;
         uiView3DSize: number;
-        linkedAssetsRenderMode: ELinkedAssetsRenderMode[keyof ELinkedAssetsRenderMode];
-        linkedAssetsRemovalMode: ELinkedAssetsRemovalMode[keyof ELinkedAssetsRemovalMode];
+        linkedAssetsRenderMode: ELinkedAssetsRenderMode;
+        linkedAssetsRemovalMode: ELinkedAssetsRemovalMode;
         reaperApplicationPath: string;
         eventsBrowserSharesSelection: boolean;
     }
@@ -383,11 +383,11 @@ declare namespace Fmod {
     interface EncodableAsset extends Asset, Encodable {}
 
     interface EncodingSetting extends ManagedObject {
-        encodingFormat: EEncodingFormat[keyof EEncodingFormat];
+        encodingFormat: EEncodingFormat;
         quality: number;
         sampleRateMode: ESampleRateMode;
         sampleRate: number;
-        loadingMode: ELoadingMode[keyof ELoadingMode];
+        loadingMode: ELoadingMode;
         platform: Platform;
         encodable: Encodable;
     }
@@ -395,7 +395,7 @@ declare namespace Fmod {
     interface Event extends EventFolder, Selector, Taggable, CommandTarget,
         ProfilerTrackable, ProfilerGraphable {
         isDefault: boolean;
-        outputFormat: EChannelFormat[keyof EChannelFormat];
+        outputFormat: EChannelFormat;
         uiMarkerTracksVisible: boolean;
         uiMaxMarkerTracksVisible: boolean;
         uiLastParameterSelection: Parameter;
@@ -441,7 +441,7 @@ declare namespace Fmod {
     interface EventAutomatableProperties extends AutomatableObject {
         isPersistent: boolean;
         maxVoices: number;
-        voiceStealing: EVoiceStealing[keyof EVoiceStealing];
+        voiceStealing: EVoiceStealing;
         priority: number;
         dopplerEnabled: boolean;
         dopplerScale: number;
@@ -455,7 +455,7 @@ declare namespace Fmod {
     }
 
     interface EventCondition extends TriggerCondition {
-        eventState: EEventState[keyof EEventState];
+        eventState: EEventState;
     }
 
     interface EventFolder extends Folder<Event> {}
@@ -513,7 +513,7 @@ declare namespace Fmod {
     interface GameParameter extends AutomatableObject,
         ParameterPrototype, CommandTarget,
         Selectable, ProfilerGraphable {
-        parameterType: EParameterType[keyof EParameterType];
+        parameterType: EParameterType;
         minimum: number;
         maximum: number;
         enumerationLabels: string[];
@@ -563,7 +563,7 @@ declare namespace Fmod {
     }
 
     interface LFOModulator extends Modulator {
-        shape: ELFOShape[keyof ELFOShape];
+        shape: ELFOShape;
         isTempoSync: boolean;
         rate: number;
         beats: number;
@@ -597,10 +597,10 @@ declare namespace Fmod {
     }
 
     interface LoudnessMeter extends MixerEffect {
-        meterRange: ELoudnessMeterRange[keyof ELoudnessMeterRange];
-        meterMode: ELoudnessMeterMode[keyof ELoudnessMeterMode];
+        meterRange: ELoudnessMeterRange;
+        meterMode: ELoudnessMeterMode;
         loudnessTarget: number;
-        loudnessScale: ELoudnessMeterScale[keyof ELoudnessMeterScale];
+        loudnessScale: ELoudnessMeterScale;
     }
 
     interface LowpassEffect extends MixerEffect {
@@ -717,7 +717,7 @@ declare namespace Fmod {
     interface MasterTrack extends GroupTrack {}
 
     interface MeteringSettings extends ManagedObject {
-        meterChannelOrdering: EMeteringChannelOrder[keyof EMeteringChannelOrder];
+        meterChannelOrdering: EMeteringChannelOrder;
     }
 
     interface MidiControlSurfaceProtocol extends ControlSurfaceProtocol {
@@ -739,7 +739,7 @@ declare namespace Fmod {
     }
 
     interface MixerBus extends MixerStrip {
-        overridingInputFormat: EChannelFormat[keyof EChannelFormat];
+        overridingInputFormat: EChannelFormat;
         effectChain: MixerBusEffectChain;
         panner: MixerBusPanner;
         output: MixerGroup;
@@ -766,7 +766,7 @@ declare namespace Fmod {
 
     interface MixerGroup extends MixerBus {
         maxInstances: number;
-        instanceStealing: EInstanceStealing[keyof EInstanceStealing];
+        instanceStealing: EInstanceStealing;
         input: MixerBus[] | MixerSend[];
     }
 
@@ -778,12 +778,12 @@ declare namespace Fmod {
         name: string;
         pitch: number;
         maxInstances: number;
-        instanceStealing: EInstanceStealing[keyof EInstanceStealing];
+        instanceStealing: EInstanceStealing;
         mixer: Mixer;
     }
 
     interface MixerPort extends MixerGroup {
-        portType: EMixerPortType[keyof EMixerPortType];
+        portType: EMixerPortType;
         mixer: Mixer;
     }
 
@@ -793,7 +793,7 @@ declare namespace Fmod {
 
     interface MixerSend extends MixerEffect {
         level: number;
-        inputFormat: EChannelFormat[keyof EChannelFormat];
+        inputFormat: EChannelFormat;
         mixerReturn: MixerReturn;
     }
 
@@ -822,13 +822,13 @@ declare namespace Fmod {
         isCutoff: boolean;
         start: number;
         length: number;
-        delayType: EDelayType[keyof EDelayType];
+        delayType: EDelayType;
         minimumTimeDelay: number;
         maximumTimeDelay: number;
         quantizationInterval: EQuantizationInterval;
         startOffset: number;
         timelockedOffset: number;
-        voiceStealing: EVoiceStealing[keyof EVoiceStealing];
+        voiceStealing: EVoiceStealing;
         maxVoices: number;
         name: string;
         fadeInCurve: FadeCurve;
@@ -839,7 +839,7 @@ declare namespace Fmod {
     }
 
     interface MultiSound extends Sound, Loopable, Selector {
-        playlistMode: EPlaylistMode[keyof EPlaylistMode];
+        playlistMode: EPlaylistMode;
         // biome-ignore lint/suspicious/noExplicitAny: unclear what this is
         playbackMode: any;
         selectables: Selectable[];
@@ -849,11 +849,11 @@ declare namespace Fmod {
     }
 
     interface MultibandEqEffect extends MixerEffect {
-        filterTypeA: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
-        filterTypeB: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
-        filterTypeC: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
-        filterTypeD: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
-        filterTypeE: EMultibandEqEffectFilterType[keyof EMultibandEqEffectFilterType];
+        filterTypeA: EMultibandEqEffectFilterType;
+        filterTypeB: EMultibandEqEffectFilterType;
+        filterTypeC: EMultibandEqEffectFilterType;
+        filterTypeD: EMultibandEqEffectFilterType;
+        filterTypeE: EMultibandEqEffectFilterType;
         frequencyA: number;
         frequencyB: number;
         frequencyC: number;
@@ -900,11 +900,11 @@ declare namespace Fmod {
         stereoRightPan: number;
         surroundPanDirection: number;
         surroundLFELevel: number;
-        stereoToSurroundPanMode: EStereoToSurroundPanMode[keyof EStereoToSurroundPanMode];
+        stereoToSurroundPanMode: EStereoToSurroundPanMode;
         surroundStereoSeparation: number;
         surroundStereoAxis: number;
         surroundHeightBlend: number;
-        overridingOutputFormat: EChannelFormat[keyof EChannelFormat];
+        overridingOutputFormat: EChannelFormat;
         disabledSpeakers: number;
         LFEUpmixEnabled: number;
     }
@@ -976,7 +976,7 @@ declare namespace Fmod {
         hardwareType: any;
         name: string;
         subDirectory: string;
-        speakerFormat: EPlatformSpeakerFormat[keyof EPlatformSpeakerFormat];
+        speakerFormat: EPlatformSpeakerFormat;
         buildMetadataOnly: boolean;
         encodingSettings: EncodingSetting[];
         uiActivePlatformOwner: ProjectSettings;
@@ -1067,12 +1067,12 @@ declare namespace Fmod {
     }
 
     interface ProxyEffect extends MixerEffect {
-        inputFormat: EChannelFormat[keyof EChannelFormat]; // NOTE: this is a guess
+        inputFormat: EChannelFormat; // NOTE: this is a guess
     }
 
     interface Quantizable extends ManagedObject {
         quantizationInterval: EQuantizationInterval;
-        transitionOffset: ETransitionOffset[keyof ETransitionOffset];
+        transitionOffset: ETransitionOffset;
     }
 
     interface RandomizerModulator extends Modulator {
@@ -1164,7 +1164,7 @@ declare namespace Fmod {
     }
 
     interface SidechainModulator extends Modulator, SidechainTarget {
-        levelMode: ESidechainModulatorLevelMode[keyof ESidechainModulatorLevelMode];
+        levelMode: ESidechainModulatorLevelMode;
         amount: number;
         attackTime: number;
         releaseTime: number;
@@ -1185,7 +1185,7 @@ declare namespace Fmod {
     }
 
     interface Snapshot extends Event {
-        behavior: ESnapshotBehavior[keyof ESnapshotBehavior];
+        behavior: ESnapshotBehavior;
         snapshotMasterTrack: SnapshotMasterTrack;
         snapshotProperties: SnapshotProperty[];
         snapshotTracks: SnapshotTrack[];
@@ -1226,9 +1226,9 @@ declare namespace Fmod {
 
     interface SoundScatterer extends Sound {
         polyphony: number;
-        soundStealing: ESoundScattererSoundStealing[keyof ESoundScattererSoundStealing];
+        soundStealing: ESoundScattererSoundStealing;
         totalSounds: number;
-        spawnDelayType: EDelayType[keyof EDelayType];
+        spawnDelayType: EDelayType;
         minimumTimeBetweenSounds: number;
         maximumTimeBetweenSounds: number;
         spawnQuantizationInterval: EQuantizationInterval;
@@ -1245,11 +1245,11 @@ declare namespace Fmod {
 
     interface SpatialEffect extends MixerEffect {
         bypass: boolean;
-        distanceRolloffType: EDistanceRolloffType[keyof EDistanceRolloffType];
+        distanceRolloffType: EDistanceRolloffType;
         minimumDistance: number;
         maximumDistance: number;
         overrideRange: boolean;
-        extentMode: EExtentMode[keyof EExtentMode];
+        extentMode: EExtentMode;
         soundSize: number;
         minimumExtent: number;
     }
@@ -1262,7 +1262,7 @@ declare namespace Fmod {
         userPanExtent: number;
         userLFELevel: number;
         LFEUpmixEnabled: boolean;
-        stereoToSurroundUserPanMode: EStereoToSurroundPanMode[keyof EStereoToSurroundPanMode];
+        stereoToSurroundUserPanMode: EStereoToSurroundPanMode;
         userStereoSeparation: number;
         userStereoAxis: number;
     }
@@ -1323,7 +1323,7 @@ declare namespace Fmod {
         transmitMode: boolean;
         level: number;
         channel: number;
-        speakerMode: ESpeakerMode[keyof ESpeakerMode];
+        speakerMode: ESpeakerMode;
     }
 
     interface TransitionDestination extends ManagedObject {
@@ -1377,7 +1377,7 @@ declare namespace Fmod {
     interface Triggerable extends ManagedObject {
         triggerProbabilityEnabled: boolean;
         triggerProbability: number;
-        triggerConditionMode: ETriggerConditionMode[keyof ETriggerConditionMode];
+        triggerConditionMode: ETriggerConditionMode;
         triggerConditions: TriggerCondition[];
         addParameterCondition(parameter: ParameterPreset | GameParameter, min: number, max: number | undefined): ParameterCondition;
     }
@@ -1471,8 +1471,8 @@ declare namespace Fmod {
         isEnabled?: boolean;
         minimumWidth?: number;
         minimumHeight?: number;
-        sizePolicy?: EUISizePolicy[keyof EUISizePolicy];
-        alignment?: Readonly<EUIAlignment[keyof EUIAlignment]>;
+        sizePolicy?: EUISizePolicy;
+        alignment?: Readonly<EUIAlignment>;
         stretchFactor?: number;
         row?: Readonly<number>;
         column?: Readonly<number>;
@@ -1490,28 +1490,28 @@ declare namespace Fmod {
     }
 
     interface UIWidgetLabel extends UIWidgetDescription {
-        widgetType: EUIWidgetType["Label"];
+        widgetType: EUIWidgetType.Label;
         text: string;
         wordWrap: boolean;
     }
 
     interface UIWidgetPushButton extends UIWidgetDescription {
-        widgetType: EUIWidgetType["PushButton"];
+        widgetType: EUIWidgetType.PushButton;
         text: string;
         onClicked: () => void;
     }
 
     interface UIWidgetLineEdit extends UIWidgetDescription {
-        widgetType: EUIWidgetType["LineEdit"];
+        widgetType: EUIWidgetType.LineEdit;
         // text: () => string; // TODO
         isReadOnly: boolean;
-        echoMode: EUIEchoMode[keyof EUIEchoMode];
+        echoMode: EUIEchoMode;
         onTextEdited: () => void;
         onEditingFinished: () => void;
     }
 
     interface UIWidgetTextEdit extends UIWidgetDescription {
-        widgetType: EUIWidgetType["TextEdit"];
+        widgetType: EUIWidgetType.TextEdit;
         // text: () => string; // TODO
         // html: () => string; // TODO
         isReadOnly: boolean;
@@ -1526,7 +1526,7 @@ declare namespace Fmod {
     }
 
     interface UIWidgetComboBox extends UIWidgetDescription {
-        widgetType: EUIWidgetType["ComboBox"];
+        widgetType: EUIWidgetType.ComboBox;
         items: UIWidgetComboBoxItem[];
         // currentIndex: () => number; // TODO
         currentText: Readonly<string>;
@@ -1536,7 +1536,7 @@ declare namespace Fmod {
     }
 
     interface UIWidgetCheckBox extends UIWidgetDescription {
-        widgetType: EUIWidgetType["CheckBox"];
+        widgetType: EUIWidgetType.CheckBox;
         text: string;
         // isChecked: () => boolean; // TODO
         onToggled: () => void;
@@ -1548,26 +1548,26 @@ declare namespace Fmod {
     }
 
     interface UIWidgetSlider extends UIWidgetDescription {
-        widgetType: EUIWidgetType["Slider"];
-        orientation: EUIOrientation[keyof EUIOrientation];
+        widgetType: EUIWidgetType.Slider;
+        orientation: EUIOrientation;
         // value: () => number; TODO
         range: UIWidgetRange;
         onValueChanged: () => void;
     }
 
     interface UIWidgetSpinBox extends UIWidgetDescription {
-        widgetType: EUIWidgetType["SpinBox"];
+        widgetType: EUIWidgetType.SpinBox;
         // value: () => number; // TODO
         range: UIWidgetRange;
         onValueChanged: () => void;
     }
 
     interface UIWidgetPathLineEdit extends UIWidgetDescription {
-        widgetType: EUIWidgetType["PathLineEdit"];
+        widgetType: EUIWidgetType.PathLineEdit;
         // text: () => string; // TODO
         label: Readonly<string>;
-        caption: Readonly<string>
-        pathType: Readonly<EUIPathType[keyof EUIPathType]>;
+        caption: Readonly<string>;
+        pathType: Readonly<EUIPathType>;
         onEditingFinished: () => void;
     }
 
@@ -1577,17 +1577,25 @@ declare namespace Fmod {
     }
 
     interface UIWidgetLayout extends UIWidgetDescription {
-        widgetType: EUIWidgetType["Layout"];
-        layout: EUILayoutType[keyof EUILayoutType];
-        items: Array<UIWidgetCheckBox | UIWidgetComboBox | UIWidgetLabel 
-            | UIWidgetLayout | UIWidgetLineEdit | UIWidgetPathLineEdit 
-            | UIWidgetPushButton | UIWidgetSlider | UIWidgetSpinBox 
-            | UIWidgetTextEdit>;
-        contentsMargins?: { 
-            left: number, 
-            top: number, 
-            right: number, 
-            bottom: number 
+        widgetType: EUIWidgetType.Layout;
+        layout: EUILayoutType;
+        items: Array<
+            | UIWidgetCheckBox
+            | UIWidgetComboBox
+            | UIWidgetLabel
+            | UIWidgetLayout
+            | UIWidgetLineEdit
+            | UIWidgetPathLineEdit
+            | UIWidgetPushButton
+            | UIWidgetSlider
+            | UIWidgetSpinBox
+            | UIWidgetTextEdit
+        >;
+        contentsMargins?: {
+            left: number;
+            top: number;
+            right: number;
+            bottom: number;
         };
         spacing?: number;
     }
@@ -1606,230 +1614,230 @@ declare namespace Fmod {
         pathType: EUIPathType;
     }
 
-//  ██████  ██████   ██████       ██ ███████  ██████ ████████ 
-//  ██   ██ ██   ██ ██    ██      ██ ██      ██         ██    
-//  ██████  ██████  ██    ██      ██ █████   ██         ██    
-//  ██      ██   ██ ██    ██ ██   ██ ██      ██         ██    
-//  ██      ██   ██  ██████   █████  ███████  ██████    ██    
+    //  ██████  ██████   ██████       ██ ███████  ██████ ████████
+    //  ██   ██ ██   ██ ██    ██      ██ ██      ██         ██
+    //  ██████  ██████  ██    ██      ██ █████   ██         ██
+    //  ██      ██   ██ ██    ██ ██   ██ ██      ██         ██
+    //  ██      ██   ██  ██████   █████  ███████  ██████    ██
 
     interface Project {
         workspace: Workspace;
         model: {
-            ADSRModulator: Entity<ADSRModulator>,
-            ActionSheet: Entity<ActionSheet>,
-            Asset: Entity<Asset>,
-            AudioFile: Entity<AudioFile>,
-            AudioSettings: Entity<AudioSettings>,
-            AudioTable: Entity<AudioTable>,
-            AudioTrack: Entity<AudioTrack>,
-            AutomatableObject: Entity<AutomatableObject>,
-            AutomationCurve: Entity<AutomationCurve>,
-            PropertyDescription: Entity<PropertyDescription>,
-            AutomationPoint: Entity<AutomationPoint>,
-            AutomationTrack: Entity<AutomationTrack>,
-            Automator: Entity<Automator>,
-            AutopitchModulator: Entity<AutopitchModulator>,
-            Bank: Entity<Bank>,
-            BankFolder: Entity<BankFolder>,
-            BoolPluginParameter: Entity<BoolPluginParameter>,
-            ChannelMixEffect: Entity<ChannelMixEffect>,
-            ChorusEffect: Entity<ChorusEffect>,
-            Colorable: Entity<Colorable>,
-            CommandSound: Entity<CommandSound>,
-            CommandTarget: Entity<CommandTarget>,
-            CompressorEffect: Entity<CompressorEffect>,
-            ControlSurface: Entity<ControlSurface>,
-            ControlSurfaceCustomBinding: Entity<ControlSurfaceCustomBinding>,
-            ControlSurfaceCustomBindings: Entity<ControlSurfaceCustomBindings>,
-            ControlSurfaceProtocol: Entity<ControlSurfaceProtocol>,
-            ConvolutionReverbEffect: Entity<ConvolutionReverbEffect>,
-            DAWAsset: Entity<DAWAsset>,
-            DAWProject: Entity<DAWProject>,
-            DataFile: Entity<DataFile>,
-            DataPluginParameter: Entity<DataPluginParameter>,
-            DataReferee: Entity<DataReferee>,
-            DelayEffect: Entity<DelayEffect>,
-            DistortionEffect: Entity<DistortionEffect>,
-            EditorSettings: Entity<EditorSettings>,
-            EffectChain: Entity<EffectChain>,
-            EffectPreset: Entity<EffectPreset>,
-            EffectPresetFolder: Entity<EffectPresetFolder>,
-            Encodable: Entity<Encodable>,
-            EncodableAsset: Entity<EncodableAsset>,
-            EncodingSetting: Entity<EncodingSetting>,
-            Event: Entity<Event>,
-            EventAutomatableProperties: Entity<EventAutomatableProperties>,
-            EventCondition: Entity<EventCondition>,
-            EventFolder: Entity<EventFolder>,
-            EventMixer: Entity<EventMixer>,
-            EventMixerGroup: Entity<EventMixerGroup>,
-            EventMixerMaster: Entity<EventMixerMaster>,
-            EventMixerReturn: Entity<EventMixerReturn>,
-            EventSound: Entity<EventSound>,
-            FadeCurve: Entity<FadeCurve>,
-            FlangerEffect: Entity<FlangerEffect>,
-            FloatPluginParameter: Entity<FloatPluginParameter>,
-            Folder: Entity<Folder<any>>,
-            GainEffect: Entity<GainEffect>,
-            GameParameter: Entity<GameParameter>,
-            GroupTrack: Entity<GroupTrack>,
-            HighpassEffect: Entity<HighpassEffect>,
-            HighpassSimpleEffect: Entity<HighpassSimpleEffect>,
-            ITEchoEffect: Entity<ITEchoEffect>,
-            IntPluginParameter: Entity<IntPluginParameter>,
-            LFOModulator: Entity<LFOModulator>,
-            LimiterEffect: Entity<LimiterEffect>,
-            Locale: Entity<Locale>,
-            LoopRegion: Entity<LoopRegion>,
-            Loopable: Entity<Loopable>,
-            LoudnessMeter: Entity<LoudnessMeter>,
-            LowpassEffect: Entity<LowpassEffect>,
-            LowpassSimpleEffect: Entity<LowpassSimpleEffect>,
-            MackieControlSurface: Entity<MackieControlSurface>,
-            MackieExtendedControlSurface: Entity<MackieExtendedControlSurface>,
-            ManagedObject: Entity<ManagedObject>,
-            ManagedProperty: Entity<ManagedProperty>,
-            ManagedPropertyMap: Entity<ManagedPropertyMap>,
-            ManagedRelationship: Entity<ManagedRelationship>,
-            ManagedRelationshipMap: Entity<ManagedRelationshipMap>,
-            Marker: Entity<Marker>,
-            MarkerTrack: Entity<MarkerTrack>,
-            MasterAssetFolder: Entity<MasterAssetFolder>,
-            MasterBankFolder: Entity<MasterBankFolder>,
-            MasterEffectPresetFolder: Entity<MasterEffectPresetFolder>,
-            MasterEventFolder: Entity<MasterEventFolder>,
-            MasterParameterPresetFolder: Entity<MasterParameterPresetFolder>,
-            MasterSandboxFolder: Entity<MasterSandboxFolder>,
-            MasterTagFolder: Entity<MasterTagFolder>,
-            MasterTrack: Entity<MasterTrack>,
-            MeteringSettings: Entity<MeteringSettings>,
-            MidiControlSurfaceProtocol: Entity<MidiControlSurfaceProtocol>,
-            Mixer: Entity<Mixer>,
-            MixerBus: Entity<MixerBus>,
-            MixerBusEffectChain: Entity<MixerBusEffectChain>,
-            MixerBusFader: Entity<MixerBusFader>,
-            MixerBusPanner: Entity<MixerBusPanner>,
-            MixerEffect: Entity<MixerEffect>,
-            MixerGroup: Entity<MixerGroup>,
-            MixerInput: Entity<MixerInput>,
-            MixerMaster: Entity<MixerMaster>,
-            MixerPort: Entity<MixerPort>,
-            MixerReturn: Entity<MixerReturn>,
-            MixerSend: Entity<MixerSend>,
-            MixerStrip: Entity<MixerStrip>,
-            MixerVCA: Entity<MixerVCA>,
-            Modulator: Entity<Modulator>,
-            Module: Entity<Module>,
-            MultiSound: Entity<MultiSound>,
-            MultibandEqEffect: Entity<MultibandEqEffect>,
-            NamedMarker: Entity<NamedMarker>,
-            NamedWorkspaceBasedSourceControlProvider: Entity<NamedWorkspaceBasedSourceControlProvider>,
-            Notable: Entity<Notable>,
-            ObjectSpatialiserEffect: Entity<ObjectSpatialiserEffect>,
-            ObsoleteObject: Entity<ObsoleteObject>,
-            OscControlSurfaceProtocol: Entity<OscControlSurfaceProtocol>,
-            PannerEffect: Entity<PannerEffect>,
-            ParamEqEffect: Entity<ParamEqEffect>,
-            Parameter: Entity<Parameter>,
-            ParameterCondition: Entity<ParameterCondition>,
-            ParameterPreset: Entity<ParameterPreset>,
-            ParameterPresetFolder: Entity<ParameterPresetFolder>,
-            ParameterProperty: Entity<ParameterProperty>,
-            ParameterPrototype: Entity<ParameterPrototype>,
-            ParameterProxy: Entity<ParameterProxy>,
-            PerforceProvider: Entity<PerforceProvider>,
-            PitchShifterEffect: Entity<PitchShifterEffect>,
-            Platform: Entity<Platform>,
-            PlatformSpecificItem: Entity<PlatformSpecificItem>,
-            PlayPercentage: Entity<PlayPercentage>,
-            Plugin: Entity<Plugin>,
-            PluginEffect: Entity<PluginEffect>,
-            PluginOwner: Entity<PluginOwner>,
-            PluginParameter: Entity<PluginParameter>,
-            PluginSettings: Entity<PluginSettings>,
-            PluginSound: Entity<PluginSound>,
-            ProfilerFolder: Entity<ProfilerFolder>,
-            ProfilerGraph: Entity<ProfilerGraph>,
-            ProfilerGraphable: Entity<ProfilerGraphable>,
-            ProfilerRecordingMarker: Entity<ProfilerRecordingMarker>,
-            ProfilerSession: Entity<ProfilerSession>,
-            ProfilerSessionFolder: Entity<ProfilerSessionFolder>,
-            ProfilerSystemTrack: Entity<ProfilerSystemTrack>,
-            ProfilerTrack: Entity<ProfilerTrack>,
-            ProfilerTrackable: Entity<ProfilerTrackable>,
-            ProgrammerSound: Entity<ProgrammerSound>,
-            ProgrammerSoundPlaceholder: Entity<ProgrammerSoundPlaceholder>,
-            ProjectSettings: Entity<ProjectSettings>,
-            ProxyEffect: Entity<ProxyEffect>,
-            Quantizable: Entity<Quantizable>,
-            RandomizerModulator: Entity<RandomizerModulator>,
-            ReferenceableData: Entity<ReferenceableData>,
-            Region: Entity<Region>,
-            ReturnTrack: Entity<ReturnTrack>,
-            SFXReverbEffect: Entity<SFXReverbEffect>,
-            SandboxEmitter: Entity<SandboxEmitter>,
-            SandboxFolder: Entity<SandboxFolder>,
-            SandboxListener: Entity<SandboxListener>,
-            SandboxParameter: Entity<SandboxParameter>,
-            SandboxParameterOwner: Entity<SandboxParameterOwner>,
-            SandboxPositionable: Entity<SandboxPositionable>,
-            SandboxScene: Entity<SandboxScene>,
-            ScriptBasedProvider: Entity<ScriptBasedProvider>,
-            Selectable: Entity<Selectable>,
-            Selector: Entity<Selector>,
-            Sidechain: Entity<Sidechain>,
-            SidechainModulator: Entity<SidechainModulator>,
-            SidechainTarget: Entity<SidechainTarget>,
-            SilenceSound: Entity<SilenceSound>,
-            SingleSound: Entity<SingleSound>,
-            Snapshot: Entity<Snapshot>,
-            SnapshotGroup: Entity<SnapshotGroup>,
-            SnapshotList: Entity<SnapshotList>,
-            SnapshotMasterTrack: Entity<SnapshotMasterTrack>,
-            SnapshotModule: Entity<SnapshotModule>,
-            SnapshotProperty: Entity<SnapshotProperty>,
-            SnapshotTrack: Entity<SnapshotTrack>,
-            Sound: Entity<Sound>,
-            SoundScatterer: Entity<SoundScatterer>,
-            SourceControlProvider: Entity<SourceControlProvider>,
-            SpatialEffect: Entity<SpatialEffect>,
-            SpatialiserEffect: Entity<SpatialiserEffect>,
-            SslNucleusControlSurface: Entity<SslNucleusControlSurface>,
-            SustainPoint: Entity<SustainPoint>,
-            Tag: Entity<Tag>,
-            TagFolder: Entity<TagFolder>,
-            Taggable: Entity<Taggable>,
-            TempoMarker: Entity<TempoMarker>,
-            TfsProvider: Entity<TfsProvider>,
-            ThreeEQEffect: Entity<ThreeEQEffect>,
-            Timeline: Entity<Timeline>,
-            TouchOscControlSurface: Entity<TouchOscControlSurface>,
-            Track: Entity<Track>,
-            TransceiverEffect: Entity<TransceiverEffect>,
-            TransitionDestination: Entity<TransitionDestination>,
-            TransitionDestinationFadeInCurve: Entity<TransitionDestinationFadeInCurve>,
-            TransitionDestinationSound: Entity<TransitionDestinationSound>,
-            TransitionFadeCurve: Entity<TransitionFadeCurve>,
-            TransitionMarker: Entity<TransitionMarker>,
-            TransitionRegion: Entity<TransitionRegion>,
-            TransitionSourceFadeOutCurve: Entity<TransitionSourceFadeOutCurve>,
-            TransitionSourceSound: Entity<TransitionSourceSound>,
-            TransitionTimeline: Entity<TransitionTimeline>,
-            TransitionTimelineOwner: Entity<TransitionTimelineOwner>,
-            TremoloEffect: Entity<TremoloEffect>,
-            TriggerCondition: Entity<TriggerCondition>,
-            Triggerable: Entity<Triggerable>,
-            UiMixerView: Entity<UiMixerView>,
-            UserProperty: Entity<UserProperty>,
-            Workspace: Entity<Workspace>,
-            WorkspaceBasedSourceControlProvider: Entity<WorkspaceBasedSourceControlProvider>,
-            WorkspaceChangelist: Entity<WorkspaceChangelist>,
-            WorkspaceItem: Entity<WorkspaceItem<any>>
+            ADSRModulator: Entity<ADSRModulator>;
+            ActionSheet: Entity<ActionSheet>;
+            Asset: Entity<Asset>;
+            AudioFile: Entity<AudioFile>;
+            AudioSettings: Entity<AudioSettings>;
+            AudioTable: Entity<AudioTable>;
+            AudioTrack: Entity<AudioTrack>;
+            AutomatableObject: Entity<AutomatableObject>;
+            AutomationCurve: Entity<AutomationCurve>;
+            PropertyDescription: Entity<PropertyDescription>;
+            AutomationPoint: Entity<AutomationPoint>;
+            AutomationTrack: Entity<AutomationTrack>;
+            Automator: Entity<Automator>;
+            AutopitchModulator: Entity<AutopitchModulator>;
+            Bank: Entity<Bank>;
+            BankFolder: Entity<BankFolder>;
+            BoolPluginParameter: Entity<BoolPluginParameter>;
+            ChannelMixEffect: Entity<ChannelMixEffect>;
+            ChorusEffect: Entity<ChorusEffect>;
+            Colorable: Entity<Colorable>;
+            CommandSound: Entity<CommandSound>;
+            CommandTarget: Entity<CommandTarget>;
+            CompressorEffect: Entity<CompressorEffect>;
+            ControlSurface: Entity<ControlSurface>;
+            ControlSurfaceCustomBinding: Entity<ControlSurfaceCustomBinding>;
+            ControlSurfaceCustomBindings: Entity<ControlSurfaceCustomBindings>;
+            ControlSurfaceProtocol: Entity<ControlSurfaceProtocol>;
+            ConvolutionReverbEffect: Entity<ConvolutionReverbEffect>;
+            DAWAsset: Entity<DAWAsset>;
+            DAWProject: Entity<DAWProject>;
+            DataFile: Entity<DataFile>;
+            DataPluginParameter: Entity<DataPluginParameter>;
+            DataReferee: Entity<DataReferee>;
+            DelayEffect: Entity<DelayEffect>;
+            DistortionEffect: Entity<DistortionEffect>;
+            EditorSettings: Entity<EditorSettings>;
+            EffectChain: Entity<EffectChain>;
+            EffectPreset: Entity<EffectPreset>;
+            EffectPresetFolder: Entity<EffectPresetFolder>;
+            Encodable: Entity<Encodable>;
+            EncodableAsset: Entity<EncodableAsset>;
+            EncodingSetting: Entity<EncodingSetting>;
+            Event: Entity<Event>;
+            EventAutomatableProperties: Entity<EventAutomatableProperties>;
+            EventCondition: Entity<EventCondition>;
+            EventFolder: Entity<EventFolder>;
+            EventMixer: Entity<EventMixer>;
+            EventMixerGroup: Entity<EventMixerGroup>;
+            EventMixerMaster: Entity<EventMixerMaster>;
+            EventMixerReturn: Entity<EventMixerReturn>;
+            EventSound: Entity<EventSound>;
+            FadeCurve: Entity<FadeCurve>;
+            FlangerEffect: Entity<FlangerEffect>;
+            FloatPluginParameter: Entity<FloatPluginParameter>;
+            Folder: Entity<Folder<any>>;
+            GainEffect: Entity<GainEffect>;
+            GameParameter: Entity<GameParameter>;
+            GroupTrack: Entity<GroupTrack>;
+            HighpassEffect: Entity<HighpassEffect>;
+            HighpassSimpleEffect: Entity<HighpassSimpleEffect>;
+            ITEchoEffect: Entity<ITEchoEffect>;
+            IntPluginParameter: Entity<IntPluginParameter>;
+            LFOModulator: Entity<LFOModulator>;
+            LimiterEffect: Entity<LimiterEffect>;
+            Locale: Entity<Locale>;
+            LoopRegion: Entity<LoopRegion>;
+            Loopable: Entity<Loopable>;
+            LoudnessMeter: Entity<LoudnessMeter>;
+            LowpassEffect: Entity<LowpassEffect>;
+            LowpassSimpleEffect: Entity<LowpassSimpleEffect>;
+            MackieControlSurface: Entity<MackieControlSurface>;
+            MackieExtendedControlSurface: Entity<MackieExtendedControlSurface>;
+            ManagedObject: Entity<ManagedObject>;
+            ManagedProperty: Entity<ManagedProperty>;
+            ManagedPropertyMap: Entity<ManagedPropertyMap>;
+            ManagedRelationship: Entity<ManagedRelationship>;
+            ManagedRelationshipMap: Entity<ManagedRelationshipMap>;
+            Marker: Entity<Marker>;
+            MarkerTrack: Entity<MarkerTrack>;
+            MasterAssetFolder: Entity<MasterAssetFolder>;
+            MasterBankFolder: Entity<MasterBankFolder>;
+            MasterEffectPresetFolder: Entity<MasterEffectPresetFolder>;
+            MasterEventFolder: Entity<MasterEventFolder>;
+            MasterParameterPresetFolder: Entity<MasterParameterPresetFolder>;
+            MasterSandboxFolder: Entity<MasterSandboxFolder>;
+            MasterTagFolder: Entity<MasterTagFolder>;
+            MasterTrack: Entity<MasterTrack>;
+            MeteringSettings: Entity<MeteringSettings>;
+            MidiControlSurfaceProtocol: Entity<MidiControlSurfaceProtocol>;
+            Mixer: Entity<Mixer>;
+            MixerBus: Entity<MixerBus>;
+            MixerBusEffectChain: Entity<MixerBusEffectChain>;
+            MixerBusFader: Entity<MixerBusFader>;
+            MixerBusPanner: Entity<MixerBusPanner>;
+            MixerEffect: Entity<MixerEffect>;
+            MixerGroup: Entity<MixerGroup>;
+            MixerInput: Entity<MixerInput>;
+            MixerMaster: Entity<MixerMaster>;
+            MixerPort: Entity<MixerPort>;
+            MixerReturn: Entity<MixerReturn>;
+            MixerSend: Entity<MixerSend>;
+            MixerStrip: Entity<MixerStrip>;
+            MixerVCA: Entity<MixerVCA>;
+            Modulator: Entity<Modulator>;
+            Module: Entity<Module>;
+            MultiSound: Entity<MultiSound>;
+            MultibandEqEffect: Entity<MultibandEqEffect>;
+            NamedMarker: Entity<NamedMarker>;
+            NamedWorkspaceBasedSourceControlProvider: Entity<NamedWorkspaceBasedSourceControlProvider>;
+            Notable: Entity<Notable>;
+            ObjectSpatialiserEffect: Entity<ObjectSpatialiserEffect>;
+            ObsoleteObject: Entity<ObsoleteObject>;
+            OscControlSurfaceProtocol: Entity<OscControlSurfaceProtocol>;
+            PannerEffect: Entity<PannerEffect>;
+            ParamEqEffect: Entity<ParamEqEffect>;
+            Parameter: Entity<Parameter>;
+            ParameterCondition: Entity<ParameterCondition>;
+            ParameterPreset: Entity<ParameterPreset>;
+            ParameterPresetFolder: Entity<ParameterPresetFolder>;
+            ParameterProperty: Entity<ParameterProperty>;
+            ParameterPrototype: Entity<ParameterPrototype>;
+            ParameterProxy: Entity<ParameterProxy>;
+            PerforceProvider: Entity<PerforceProvider>;
+            PitchShifterEffect: Entity<PitchShifterEffect>;
+            Platform: Entity<Platform>;
+            PlatformSpecificItem: Entity<PlatformSpecificItem>;
+            PlayPercentage: Entity<PlayPercentage>;
+            Plugin: Entity<Plugin>;
+            PluginEffect: Entity<PluginEffect>;
+            PluginOwner: Entity<PluginOwner>;
+            PluginParameter: Entity<PluginParameter>;
+            PluginSettings: Entity<PluginSettings>;
+            PluginSound: Entity<PluginSound>;
+            ProfilerFolder: Entity<ProfilerFolder>;
+            ProfilerGraph: Entity<ProfilerGraph>;
+            ProfilerGraphable: Entity<ProfilerGraphable>;
+            ProfilerRecordingMarker: Entity<ProfilerRecordingMarker>;
+            ProfilerSession: Entity<ProfilerSession>;
+            ProfilerSessionFolder: Entity<ProfilerSessionFolder>;
+            ProfilerSystemTrack: Entity<ProfilerSystemTrack>;
+            ProfilerTrack: Entity<ProfilerTrack>;
+            ProfilerTrackable: Entity<ProfilerTrackable>;
+            ProgrammerSound: Entity<ProgrammerSound>;
+            ProgrammerSoundPlaceholder: Entity<ProgrammerSoundPlaceholder>;
+            ProjectSettings: Entity<ProjectSettings>;
+            ProxyEffect: Entity<ProxyEffect>;
+            Quantizable: Entity<Quantizable>;
+            RandomizerModulator: Entity<RandomizerModulator>;
+            ReferenceableData: Entity<ReferenceableData>;
+            Region: Entity<Region>;
+            ReturnTrack: Entity<ReturnTrack>;
+            SFXReverbEffect: Entity<SFXReverbEffect>;
+            SandboxEmitter: Entity<SandboxEmitter>;
+            SandboxFolder: Entity<SandboxFolder>;
+            SandboxListener: Entity<SandboxListener>;
+            SandboxParameter: Entity<SandboxParameter>;
+            SandboxParameterOwner: Entity<SandboxParameterOwner>;
+            SandboxPositionable: Entity<SandboxPositionable>;
+            SandboxScene: Entity<SandboxScene>;
+            ScriptBasedProvider: Entity<ScriptBasedProvider>;
+            Selectable: Entity<Selectable>;
+            Selector: Entity<Selector>;
+            Sidechain: Entity<Sidechain>;
+            SidechainModulator: Entity<SidechainModulator>;
+            SidechainTarget: Entity<SidechainTarget>;
+            SilenceSound: Entity<SilenceSound>;
+            SingleSound: Entity<SingleSound>;
+            Snapshot: Entity<Snapshot>;
+            SnapshotGroup: Entity<SnapshotGroup>;
+            SnapshotList: Entity<SnapshotList>;
+            SnapshotMasterTrack: Entity<SnapshotMasterTrack>;
+            SnapshotModule: Entity<SnapshotModule>;
+            SnapshotProperty: Entity<SnapshotProperty>;
+            SnapshotTrack: Entity<SnapshotTrack>;
+            Sound: Entity<Sound>;
+            SoundScatterer: Entity<SoundScatterer>;
+            SourceControlProvider: Entity<SourceControlProvider>;
+            SpatialEffect: Entity<SpatialEffect>;
+            SpatialiserEffect: Entity<SpatialiserEffect>;
+            SslNucleusControlSurface: Entity<SslNucleusControlSurface>;
+            SustainPoint: Entity<SustainPoint>;
+            Tag: Entity<Tag>;
+            TagFolder: Entity<TagFolder>;
+            Taggable: Entity<Taggable>;
+            TempoMarker: Entity<TempoMarker>;
+            TfsProvider: Entity<TfsProvider>;
+            ThreeEQEffect: Entity<ThreeEQEffect>;
+            Timeline: Entity<Timeline>;
+            TouchOscControlSurface: Entity<TouchOscControlSurface>;
+            Track: Entity<Track>;
+            TransceiverEffect: Entity<TransceiverEffect>;
+            TransitionDestination: Entity<TransitionDestination>;
+            TransitionDestinationFadeInCurve: Entity<TransitionDestinationFadeInCurve>;
+            TransitionDestinationSound: Entity<TransitionDestinationSound>;
+            TransitionFadeCurve: Entity<TransitionFadeCurve>;
+            TransitionMarker: Entity<TransitionMarker>;
+            TransitionRegion: Entity<TransitionRegion>;
+            TransitionSourceFadeOutCurve: Entity<TransitionSourceFadeOutCurve>;
+            TransitionSourceSound: Entity<TransitionSourceSound>;
+            TransitionTimeline: Entity<TransitionTimeline>;
+            TransitionTimelineOwner: Entity<TransitionTimelineOwner>;
+            TremoloEffect: Entity<TremoloEffect>;
+            TriggerCondition: Entity<TriggerCondition>;
+            Triggerable: Entity<Triggerable>;
+            UiMixerView: Entity<UiMixerView>;
+            UserProperty: Entity<UserProperty>;
+            Workspace: Entity<Workspace>;
+            WorkspaceBasedSourceControlProvider: Entity<WorkspaceBasedSourceControlProvider>;
+            WorkspaceChangelist: Entity<WorkspaceChangelist>;
+            WorkspaceItem: Entity<WorkspaceItem<any>>;
         };
         save(): boolean;
         build(options?: {
-            banks: string | string[],
-            platforms: string | string[]
+            banks: string | string[];
+            platforms: string | string[];
         }): boolean;
         exportGUIDs(): boolean;
         findAvailablePlugins(): string[];
@@ -1850,24 +1858,23 @@ declare namespace Fmod {
             connect(fn: () => void): void;
             disconnect(fn: () => void): void;
         };
-        distanceRollOffType: EDistanceRolloffType[keyof EDistanceRolloffType];
-        parameterType: EParameterType[keyof EParameterType];
+        distanceRollOffType: EDistanceRolloffType;
+        parameterType: EParameterType;
         regionLoopMode: ERegionLoopMode;
     }
 
-//  ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
-//  ██       ██  ██  ██         ██    ██      ████  ████ 
-//  ███████   ████   ███████    ██    █████   ██ ████ ██ 
-//       ██    ██         ██    ██    ██      ██  ██  ██ 
-//  ███████    ██    ███████    ██    ███████ ██      ██ 
-
+    //  ███████ ██    ██ ███████ ████████ ███████ ███    ███
+    //  ██       ██  ██  ██         ██    ██      ████  ████
+    //  ███████   ████   ███████    ██    █████   ██ ████ ██
+    //       ██    ██         ██    ██    ██      ██  ██  ██
+    //  ███████    ██    ███████    ██    ███████ ██      ██
 
     interface System {
         openMode: EOpenMode;
         permission: EPermissions;
         require(fileName: string): void;
         backtrace(): void;
-        // biome-ignore lint/suspicious/noExplicitAny: can be any 
+        // biome-ignore lint/suspicious/noExplicitAny: can be any
         verbose(msg: any): void;
         // biome-ignore lint/suspicious/noExplicitAny: can be any
         print(msg: any): void;
@@ -1879,7 +1886,10 @@ declare namespace Fmod {
         question(msg: string): boolean | null;
         getText(msg: string, defaultText?: string): string | null;
         getNumber(msg: string, defaultValue?: number): number | null;
-        startAsync(executablePath: string, opts: { workingDir: string, args: string }): ScriptProcess;
+        startAsync(
+            executablePath: string,
+            opts: { workingDir: string; args: string }
+        ): ScriptProcess;
         getFile(filePath: string): File;
     }
 
@@ -1908,12 +1918,12 @@ declare namespace Fmod {
         kill(): void;
     }
 
-//  ██     ██ ██ ███    ██ ██████   ██████  ██     ██ 
-//  ██     ██ ██ ████   ██ ██   ██ ██    ██ ██     ██ 
-//  ██  █  ██ ██ ██ ██  ██ ██   ██ ██    ██ ██  █  ██ 
-//  ██ ███ ██ ██ ██  ██ ██ ██   ██ ██    ██ ██ ███ ██ 
-//   ███ ███  ██ ██   ████ ██████   ██████   ███ ███  
-                                                      
+    //  ██     ██ ██ ███    ██ ██████   ██████  ██     ██
+    //  ██     ██ ██ ████   ██ ██   ██ ██    ██ ██     ██
+    //  ██  █  ██ ██ ██ ██  ██ ██   ██ ██    ██ ██  █  ██
+    //  ██ ███ ██ ██ ██  ██ ██ ██   ██ ██    ██ ██ ███ ██
+    //   ███ ███  ██ ██   ████ ██████   ██████   ███ ███
+
     interface Window {
         open(type: WindowType): void;
         navigateTo(obj: ManagedObject): void;
@@ -1926,18 +1936,18 @@ declare namespace Fmod {
         triggerAction(action: EWindowAction): void;
     }
 
-//  ███████ ████████ ██    ██ ██████  ██  ██████  
-//  ██         ██    ██    ██ ██   ██ ██ ██    ██ 
-//  ███████    ██    ██    ██ ██   ██ ██ ██    ██ 
-//       ██    ██    ██    ██ ██   ██ ██ ██    ██ 
-//  ███████    ██     ██████  ██████  ██  ██████  
+    //  ███████ ████████ ██    ██ ██████  ██  ██████
+    //  ██         ██    ██    ██ ██   ██ ██ ██    ██
+    //  ███████    ██    ██    ██ ██   ██ ██ ██    ██
+    //       ██    ██    ██    ██ ██   ██ ██ ██    ██
+    //  ███████    ██     ██████  ██████  ██  ██████
 
     interface Studio {
         application: {
-            filePath: string
+            filePath: string;
         };
         os: {
-            platform: string
+            platform: string;
         };
         menu: Menu;
         project: Project;
@@ -1945,669 +1955,676 @@ declare namespace Fmod {
         ui: UI;
         window: Window;
         version: {
-            productVersion: number,
-            majorVersion: number,
-            minorVersion: number,
-            changelist: number
+            productVersion: number;
+            majorVersion: number;
+            minorVersion: number;
+            changelist: number;
         };
     }
 
-//  ████████ ██    ██ ██████  ███████ ███████ 
-//     ██     ██  ██  ██   ██ ██      ██      
-//     ██      ████   ██████  █████   ███████ 
-//     ██       ██    ██      ██           ██ 
-//     ██       ██    ██      ███████ ███████ 
+    //  ████████ ██    ██ ██████  ███████ ███████
+    //     ██     ██  ██  ██   ██ ██      ██
+    //     ██      ████   ██████  █████   ███████
+    //     ██       ██    ██      ██           ██
+    //     ██       ██    ██      ███████ ███████
 
-    type EffectName =
-        'ThreeEQEffect' |
-        'ChannelMixerEffect' |
-        'ChorusEffect' |
-        'CompressorEffect' |
-        'ConvolutionReverbEffect' |
-        'DistortionEffect' |
-        'DelayEffect' |
-        'FlangerEffect' |
-        'GainEffect' |
-        'LimiterEffect' |
-        'MultibandEqEffect' |
-        'PitchShifterEffect' |
-        'SFXReverbEffect' |
-        'TransceiverEffect' |
-        'TremoloEffect' |
-        'HighpassEffect' |
-        'HighpassSimpleEffect' |
-        'LowpassEffect' |
-        'LowpassSimpleEffect' |
-        'ParamEqEffect' |
-        'SpatialiserEffect' |
-        'ObjectSpatialiserEffect' |
-        'LoudnessMeter';
+    enum EffectName {
+        ThreeEQEffect = "ThreeEQEffect",
+        ChannelMixerEffect = "ChannelMixerEffect",
+        ChorusEffect = "ChorusEffect",
+        CompressorEffect = "CompressorEffect",
+        ConvolutionReverbEffect = "ConvolutionReverbEffect",
+        DistortionEffect = "DistortionEffect",
+        DelayEffect = "DelayEffect",
+        FlangerEffect = "FlangerEffect",
+        GainEffect = "GainEffect",
+        LimiterEffect = "LimiterEffect",
+        MultibandEqEffect = "MultibandEqEffect",
+        PitchShifterEffect = "PitchShifterEffect",
+        SFXReverbEffect = "SFXReverbEffect",
+        TransceiverEffect = "TransceiverEffect",
+        TremoloEffect = "TremoloEffect",
+        HighpassEffect = "HighpassEffect",
+        HighpassSimpleEffect = "HighpassSimpleEffect",
+        LowpassEffect = "LowpassEffect",
+        LowpassSimpleEffect = "LowpassSimpleEffect",
+        ParamEqEffect = "ParamEqEffect",
+        SpatialiserEffect = "SpatialiserEffect",
+        ObjectSpatialiserEffect = "ObjectSpatialiserEffect",
+        LoudnessMeter = "LoudnessMeter",
+    }
 
-    type EntityName =
-        | "ADSRModulator"
-        | "ActionSheet"
-        | "Asset"
-        | "AudioFile"
-        | "AudioSettings"
-        | "AudioTable"
-        | "AudioTrack"
-        | "AutomatableObject"
-        | "AutomationCurve"
-        | "PropertyDescription"
-        | "AutomationPoint"
-        | "AutomationTrack"
-        | "Automator"
-        | "AutopitchModulator"
-        | "Bank"
-        | "BankFolder"
-        | "BoolPluginParameter"
-        | "ChannelMixEffect"
-        | "ChorusEffect"
-        | "Colorable"
-        | "CommandSound"
-        | "CommandTarget"
-        | "CompressorEffect"
-        | "ControlSurface"
-        | "ControlSurfaceCustomBinding"
-        | "ControlSurfaceCustomBindings"
-        | "ControlSurfaceProtocol"
-        | "ConvolutionReverbEffect"
-        | "DAWAsset"
-        | "DAWProject"
-        | "DataFile"
-        | "DataPluginParameter"
-        | "DataReferee"
-        | "DelayEffect"
-        | "DistortionEffect"
-        | "EditorSettings"
-        | "EffectChain"
-        | "EffectPreset"
-        | "EffectPresetFolder"
-        | "Encodable"
-        | "EncodableAsset"
-        | "EncodingSetting"
-        | "Event"
-        | "EventAutomatableProperties"
-        | "EventCondition"
-        | "EventFolder"
-        | "EventMixer"
-        | "EventMixerGroup"
-        | "EventMixerMaster"
-        | "EventMixerReturn"
-        | "EventSound"
-        | "FadeCurve"
-        | "FlangerEffect"
-        | "FloatPluginParameter"
-        | "Folder"
-        | "GainEffect"
-        | "GameParameter"
-        | "GroupTrack"
-        | "HighpassEffect"
-        | "HighpassSimpleEffect"
-        | "ITEchoEffect"
-        | "IntPluginParameter"
-        | "LFOModulator"
-        | "LimiterEffect"
-        | "Locale"
-        | "LoopRegion"
-        | "Loopable"
-        | "LoudnessMeter"
-        | "LowpassEffect"
-        | "LowpassSimpleEffect"
-        | "MackieControlSurface"
-        | "MackieExtendedControlSurface"
-        | "ManagedObject"
-        | "ManagedProperty"
-        | "ManagedPropertyMap"
-        | "ManagedRelationship"
-        | "ManagedRelationshipMap"
-        | "Marker"
-        | "MarkerTrack"
-        | "MasterAssetFolder"
-        | "MasterBankFolder"
-        | "MasterEffectPresetFolder"
-        | "MasterEventFolder"
-        | "MasterParameterPresetFolder"
-        | "MasterSandboxFolder"
-        | "MasterTagFolder"
-        | "MasterTrack"
-        | "MeteringSettings"
-        | "MidiControlSurfaceProtocol"
-        | "Mixer"
-        | "MixerBus"
-        | "MixerBusEffectChain"
-        | "MixerBusFader"
-        | "MixerBusPanner"
-        | "MixerEffect"
-        | "MixerGroup"
-        | "MixerInput"
-        | "MixerMaster"
-        | "MixerPort"
-        | "MixerReturn"
-        | "MixerSend"
-        | "MixerStrip"
-        | "MixerVCA"
-        | "Modulator"
-        | "Module"
-        | "MultiSound"
-        | "MultibandEqEffect"
-        | "NamedMarker"
-        | "NamedWorkspaceBasedSourceControlProvider"
-        | "Notable"
-        | "ObjectSpatialiserEffect"
-        | "ObsoleteObject"
-        | "OscControlSurfaceProtocol"
-        | "PannerEffect"
-        | "ParamEqEffect"
-        | "Parameter"
-        | "ParameterCondition"
-        | "ParameterPreset"
-        | "ParameterPresetFolder"
-        | "ParameterProperty"
-        | "ParameterPrototype"
-        | "ParameterProxy"
-        | "PerforceProvider"
-        | "PitchShifterEffect"
-        | "Platform"
-        | "PlatformSpecificItem"
-        | "PlayPercentage"
-        | "Plugin"
-        | "PluginEffect"
-        | "PluginOwner"
-        | "PluginParameter"
-        | "PluginSettings"
-        | "PluginSound"
-        | "ProfilerFolder"
-        | "ProfilerGraph"
-        | "ProfilerGraphable"
-        | "ProfilerRecordingMarker"
-        | "ProfilerSession"
-        | "ProfilerSessionFolder"
-        | "ProfilerSystemTrack"
-        | "ProfilerTrack"
-        | "ProfilerTrackable"
-        | "ProgrammerSound"
-        | "ProgrammerSoundPlaceholder"
-        | "ProjectSettings"
-        | "ProxyEffect"
-        | "Quantizable"
-        | "RandomizerModulator"
-        | "ReferenceableData"
-        | "Region"
-        | "ReturnTrack"
-        | "SFXReverbEffect"
-        | "SandboxEmitter"
-        | "SandboxFolder"
-        | "SandboxListener"
-        | "SandboxParameter"
-        | "SandboxParameterOwner"
-        | "SandboxPositionable"
-        | "SandboxScene"
-        | "ScriptBasedProvider"
-        | "Selectable"
-        | "Selector"
-        | "Sidechain"
-        | "SidechainModulator"
-        | "SidechainTarget"
-        | "SilenceSound"
-        | "SingleSound"
-        | "Snapshot"
-        | "SnapshotGroup"
-        | "SnapshotList"
-        | "SnapshotMasterTrack"
-        | "SnapshotModule"
-        | "SnapshotProperty"
-        | "SnapshotTrack"
-        | "Sound"
-        | "SoundScatterer"
-        | "SourceControlProvider"
-        | "SpatialEffect"
-        | "SpatialiserEffect"
-        | "SslNucleusControlSurface"
-        | "SustainPoint"
-        | "Tag"
-        | "TagFolder"
-        | "Taggable"
-        | "TempoMarker"
-        | "TfsProvider"
-        | "ThreeEQEffect"
-        | "Timeline"
-        | "TouchOscControlSurface"
-        | "Track"
-        | "TransceiverEffect"
-        | "TransitionDestination"
-        | "TransitionDestinationFadeInCurve"
-        | "TransitionDestinationSound"
-        | "TransitionFadeCurve"
-        | "TransitionMarker"
-        | "TransitionRegion"
-        | "TransitionSourceFadeOutCurve"
-        | "TransitionSourceSound"
-        | "TransitionTimeline"
-        | "TransitionTimelineOwner"
-        | "TremoloEffect"
-        | "TriggerCondition"
-        | "Triggerable"
-        | "UiMixerView"
-        | "UserProperty"
-        | "Workspace"
-        | "WorkspaceBasedSourceControlProvider"
-        | "WorkspaceChangelist"
-        | "WorkspaceItem";
+    enum EntityName {
+        ADSRModulator = "ADSRModulator",
+        ActionSheet = "ActionSheet",
+        Asset = "Asset",
+        AudioFile = "AudioFile",
+        AudioSettings = "AudioSettings",
+        AudioTable = "AudioTable",
+        AudioTrack = "AudioTrack",
+        AutomatableObject = "AutomatableObject",
+        AutomationCurve = "AutomationCurve",
+        PropertyDescription = "PropertyDescription",
+        AutomationPoint = "AutomationPoint",
+        AutomationTrack = "AutomationTrack",
+        Automator = "Automator",
+        AutopitchModulator = "AutopitchModulator",
+        Bank = "Bank",
+        BankFolder = "BankFolder",
+        BoolPluginParameter = "BoolPluginParameter",
+        ChannelMixEffect = "ChannelMixEffect",
+        ChorusEffect = "ChorusEffect",
+        Colorable = "Colorable",
+        CommandSound = "CommandSound",
+        CommandTarget = "CommandTarget",
+        CompressorEffect = "CompressorEffect",
+        ControlSurface = "ControlSurface",
+        ControlSurfaceCustomBinding = "ControlSurfaceCustomBinding",
+        ControlSurfaceCustomBindings = "ControlSurfaceCustomBindings",
+        ControlSurfaceProtocol = "ControlSurfaceProtocol",
+        ConvolutionReverbEffect = "ConvolutionReverbEffect",
+        DAWAsset = "DAWAsset",
+        DAWProject = "DAWProject",
+        DataFile = "DataFile",
+        DataPluginParameter = "DataPluginParameter",
+        DataReferee = "DataReferee",
+        DelayEffect = "DelayEffect",
+        DistortionEffect = "DistortionEffect",
+        EditorSettings = "EditorSettings",
+        EffectChain = "EffectChain",
+        EffectPreset = "EffectPreset",
+        EffectPresetFolder = "EffectPresetFolder",
+        Encodable = "Encodable",
+        EncodableAsset = "EncodableAsset",
+        EncodingSetting = "EncodingSetting",
+        Event = "Event",
+        EventAutomatableProperties = "EventAutomatableProperties",
+        EventCondition = "EventCondition",
+        EventFolder = "EventFolder",
+        EventMixer = "EventMixer",
+        EventMixerGroup = "EventMixerGroup",
+        EventMixerMaster = "EventMixerMaster",
+        EventMixerReturn = "EventMixerReturn",
+        EventSound = "EventSound",
+        FadeCurve = "FadeCurve",
+        FlangerEffect = "FlangerEffect",
+        FloatPluginParameter = "FloatPluginParameter",
+        Folder = "Folder",
+        GainEffect = "GainEffect",
+        GameParameter = "GameParameter",
+        GroupTrack = "GroupTrack",
+        HighpassEffect = "HighpassEffect",
+        HighpassSimpleEffect = "HighpassSimpleEffect",
+        ITEchoEffect = "ITEchoEffect",
+        IntPluginParameter = "IntPluginParameter",
+        LFOModulator = "LFOModulator",
+        LimiterEffect = "LimiterEffect",
+        Locale = "Locale",
+        LoopRegion = "LoopRegion",
+        Loopable = "Loopable",
+        LoudnessMeter = "LoudnessMeter",
+        LowpassEffect = "LowpassEffect",
+        LowpassSimpleEffect = "LowpassSimpleEffect",
+        MackieControlSurface = "MackieControlSurface",
+        MackieExtendedControlSurface = "MackieExtendedControlSurface",
+        ManagedObject = "ManagedObject",
+        ManagedProperty = "ManagedProperty",
+        ManagedPropertyMap = "ManagedPropertyMap",
+        ManagedRelationship = "ManagedRelationship",
+        ManagedRelationshipMap = "ManagedRelationshipMap",
+        Marker = "Marker",
+        MarkerTrack = "MarkerTrack",
+        MasterAssetFolder = "MasterAssetFolder",
+        MasterBankFolder = "MasterBankFolder",
+        MasterEffectPresetFolder = "MasterEffectPresetFolder",
+        MasterEventFolder = "MasterEventFolder",
+        MasterParameterPresetFolder = "MasterParameterPresetFolder",
+        MasterSandboxFolder = "MasterSandboxFolder",
+        MasterTagFolder = "MasterTagFolder",
+        MasterTrack = "MasterTrack",
+        MeteringSettings = "MeteringSettings",
+        MidiControlSurfaceProtocol = "MidiControlSurfaceProtocol",
+        Mixer = "Mixer",
+        MixerBus = "MixerBus",
+        MixerBusEffectChain = "MixerBusEffectChain",
+        MixerBusFader = "MixerBusFader",
+        MixerBusPanner = "MixerBusPanner",
+        MixerEffect = "MixerEffect",
+        MixerGroup = "MixerGroup",
+        MixerInput = "MixerInput",
+        MixerMaster = "MixerMaster",
+        MixerPort = "MixerPort",
+        MixerReturn = "MixerReturn",
+        MixerSend = "MixerSend",
+        MixerStrip = "MixerStrip",
+        MixerVCA = "MixerVCA",
+        Modulator = "Modulator",
+        Module = "Module",
+        MultiSound = "MultiSound",
+        MultibandEqEffect = "MultibandEqEffect",
+        NamedMarker = "NamedMarker",
+        NamedWorkspaceBasedSourceControlProvider = "NamedWorkspaceBasedSourceControlProvider",
+        Notable = "Notable",
+        ObjectSpatialiserEffect = "ObjectSpatialiserEffect",
+        ObsoleteObject = "ObsoleteObject",
+        OscControlSurfaceProtocol = "OscControlSurfaceProtocol",
+        PannerEffect = "PannerEffect",
+        ParamEqEffect = "ParamEqEffect",
+        Parameter = "Parameter",
+        ParameterCondition = "ParameterCondition",
+        ParameterPreset = "ParameterPreset",
+        ParameterPresetFolder = "ParameterPresetFolder",
+        ParameterProperty = "ParameterProperty",
+        ParameterPrototype = "ParameterPrototype",
+        ParameterProxy = "ParameterProxy",
+        PerforceProvider = "PerforceProvider",
+        PitchShifterEffect = "PitchShifterEffect",
+        Platform = "Platform",
+        PlatformSpecificItem = "PlatformSpecificItem",
+        PlayPercentage = "PlayPercentage",
+        Plugin = "Plugin",
+        PluginEffect = "PluginEffect",
+        PluginOwner = "PluginOwner",
+        PluginParameter = "PluginParameter",
+        PluginSettings = "PluginSettings",
+        PluginSound = "PluginSound",
+        ProfilerFolder = "ProfilerFolder",
+        ProfilerGraph = "ProfilerGraph",
+        ProfilerGraphable = "ProfilerGraphable",
+        ProfilerRecordingMarker = "ProfilerRecordingMarker",
+        ProfilerSession = "ProfilerSession",
+        ProfilerSessionFolder = "ProfilerSessionFolder",
+        ProfilerSystemTrack = "ProfilerSystemTrack",
+        ProfilerTrack = "ProfilerTrack",
+        ProfilerTrackable = "ProfilerTrackable",
+        ProgrammerSound = "ProgrammerSound",
+        ProgrammerSoundPlaceholder = "ProgrammerSoundPlaceholder",
+        ProjectSettings = "ProjectSettings",
+        ProxyEffect = "ProxyEffect",
+        Quantizable = "Quantizable",
+        RandomizerModulator = "RandomizerModulator",
+        ReferenceableData = "ReferenceableData",
+        Region = "Region",
+        ReturnTrack = "ReturnTrack",
+        SFXReverbEffect = "SFXReverbEffect",
+        SandboxEmitter = "SandboxEmitter",
+        SandboxFolder = "SandboxFolder",
+        SandboxListener = "SandboxListener",
+        SandboxParameter = "SandboxParameter",
+        SandboxParameterOwner = "SandboxParameterOwner",
+        SandboxPositionable = "SandboxPositionable",
+        SandboxScene = "SandboxScene",
+        ScriptBasedProvider = "ScriptBasedProvider",
+        Selectable = "Selectable",
+        Selector = "Selector",
+        Sidechain = "Sidechain",
+        SidechainModulator = "SidechainModulator",
+        SidechainTarget = "SidechainTarget",
+        SilenceSound = "SilenceSound",
+        SingleSound = "SingleSound",
+        Snapshot = "Snapshot",
+        SnapshotGroup = "SnapshotGroup",
+        SnapshotList = "SnapshotList",
+        SnapshotMasterTrack = "SnapshotMasterTrack",
+        SnapshotModule = "SnapshotModule",
+        SnapshotProperty = "SnapshotProperty",
+        SnapshotTrack = "SnapshotTrack",
+        Sound = "Sound",
+        SoundScatterer = "SoundScatterer",
+        SourceControlProvider = "SourceControlProvider",
+        SpatialEffect = "SpatialEffect",
+        SpatialiserEffect = "SpatialiserEffect",
+        SslNucleusControlSurface = "SslNucleusControlSurface",
+        SustainPoint = "SustainPoint",
+        Tag = "Tag",
+        TagFolder = "TagFolder",
+        Taggable = "Taggable",
+        TempoMarker = "TempoMarker",
+        TfsProvider = "TfsProvider",
+        ThreeEQEffect = "ThreeEQEffect",
+        Timeline = "Timeline",
+        TouchOscControlSurface = "TouchOscControlSurface",
+        Track = "Track",
+        TransceiverEffect = "TransceiverEffect",
+        TransitionDestination = "TransitionDestination",
+        TransitionDestinationFadeInCurve = "TransitionDestinationFadeInCurve",
+        TransitionDestinationSound = "TransitionDestinationSound",
+        TransitionGroup = "TransitionGroup",
+        TransitionMarker = "TransitionMarker",
+        TremoloEffect = "TremoloEffect",
+        TriggerableSound = "TriggerableSound",
+        UserProperty = "UserProperty",
+        UserPropertyPrototype = "UserPropertyPrototype",
+        VCA = "VCA",
+        ValueParameter = "ValueParameter",
+        VectorPluginParameter = "VectorPluginParameter",
+        WorkspaceBasedSourceControlProvider = "WorkspaceBasedSourceControlProvider",
+        WorkspaceBasedSourceControlSettings = "WorkspaceBasedSourceControlSettings",
+        WorkspaceSourceControlSettings = "WorkspaceSourceControlSettings",
+        ZenDeskSettings = "ZenDeskSettings",
+    }
 
     type Event3DAttributes = {
-        radialDistance: number,
-        azimuth: number,
-        height: number,
-        rotation: number
+        radialDistance: number;
+        azimuth: number;
+        height: number;
+        rotation: number;
     };
 
-    type ModulatorType = 'RandomizerModulator' | 'ADSRModulator' | 'SidechainModulator';
-    type SoundType = 'SingleSound' | 'MultiSound' | 'ProgrammerSound';
+    enum ModulatorType {
+        RandomizerModulator = "RandomizerModulator",
+        ADSRModulator = "ADSRModulator",
+        SidechainModulator = "SidechainModulator",
+    }
 
-    type EBirdsEyeDragMode = {
-        "Minimap": 0,
-        "ZoomInOut": 1,
-        "ScrollHorizontallyOnly": 2
-    };
+    enum SoundType {
+        SingleSound = "SingleSound",
+        MultiSound = "MultiSound",
+        ProgrammerSound = "ProgrammerSound",
+    }
 
-    type EChannelFormat = {
-        "Mono": 0,
-        "Stereo": 1,
-        "Platform": 2,
-        "Surround_4.0": 3,
-        "Surround_5.0": 4,
-        "Souround_5.1": 5,
-        "Souround_7.1": 6,
-        "Souround_7.1.4": 7,
-    };
+    enum EBirdsEyeDragMode {
+        Minimap = 0,
+        ZoomInOut = 1,
+        ScrollHorizontallyOnly = 2,
+    }
 
-    type EChannelMixEffectOutputGrouping = {
-        "None": 0,
-        "Mono": 1,
-        "Stereo": 2,
-        "Quad": 3,
-        "5.1": 4,
-        "7.1": 5,
-        "LFE": 6,
-        "7.1.4": 7
-    };
+    enum EChannelFormat {
+        Mono = 0,
+        Stereo = 1,
+        Platform = 2,
+        Surround_4_0 = 3,
+        Surround_5_0 = 4,
+        Souround_5_1 = 5,
+        Souround_7_1 = 6,
+        Souround_7_1_4 = 7,
+    }
 
-    type ECommandType = {
-        "StartEvent": 0,
-        "StopEvent": 1,
-        "StopEventImmediate": 2,
-        "SetParameter": 3,
-        "IncrementParameter": 4
-    };
+    enum EChannelMixEffectOutputGrouping {
+        None = 0,
+        Mono = 1,
+        Stereo = 2,
+        Quad = 3,
+        _5_1 = 4,
+        _7_1 = 5,
+        LFE = 6,
+        _7_1_4 = 7,
+    }
 
-    // TODO(mhartung) where is this used?
-    type EDataDropMode = { 
-        "File": 0, 
-        "Text": 1 
-    };
+    enum ECommandType {
+        StartEvent = 0,
+        StopEvent = 1,
+        StopEventImmediate = 2,
+        SetParameter = 3,
+        IncrementParameter = 4,
+    }
 
-    type EDelayType = {
-        "Time": 0,
-        "Tempo": 1
-    };
+    enum EDataDropMode {
+        File = 0,
+        Text = 1,
+    }
 
-    type EDistanceRolloffType = {
-        "LinearSquared": 0,
-        "Linear": 1,
-        "Inverse": 2,
-        "InverseTapered": 3,
-        "Custom": 4
-    };
+    enum EDelayType {
+        Time = 0,
+        Tempo = 1,
+    }
 
-    type EEncodingFormat = {
-        "Vorbis": 0,
-        "FADPCM": 1,
-        "PCM:": 2
-    };
+    enum EDistanceRolloffType {
+        LinearSquared = 0,
+        Linear = 1,
+        Inverse = 2,
+        InverseTapered = 3,
+        Custom = 4,
+    }
 
-    type EEventState = {
-        "NotStopping": 0,
-        "Stopping": 1
-    };
+    enum EEncodingFormat {
+        Vorbis = 0,
+        FADPCM = 1,
+        PCM = 2,
+    }
 
-    type EExtentMode = {
-        "Auto": 0,
-        "User": 1,
-        "Off": 2
-    };
+    enum EEventState {
+        NotStopping = 0,
+        Stopping = 1,
+    }
 
-    type EInstanceStealing = {
-        "Oldest": 0,
-        "Quietest": 1,
-        "Virtualize": 2,
-        "None": 3,
-        "Furthest": 4
-    };
+    enum EExtentMode {
+        Auto = 0,
+        User = 1,
+        Off = 2,
+    }
 
-    type ELinkedAssetsRenderMode = {
-        "WhenDAWProjectIsSave": 0,
-        "OnFmodStudioFocus": 1,
-        "Never": 2
-    };
+    enum EInstanceStealing {
+        Oldest = 0,
+        Quietest = 1,
+        Virtualize = 2,
+        None = 3,
+        Furthest = 4,
+    }
 
-    type ELinkedAssetsRemovalMode = {
-        "AfterRenderingIfSourceAssetsAreNoLongerOnDisk": 0,
-        "Never": 1
-    };
+    enum ELinkedAssetsRenderMode {
+        WhenDAWProjectIsSave = 0,
+        OnFmodStudioFocus = 1,
+        Never = 2,
+    }
 
-    type ELFOShape = {
-        "Sine": 0,
-        "Square": 1,
-        "Triangle": 2,
-        "SawUp": 3,
-        "SawDown": 4,
-        "NoiseStepped": 5,
-        "NoiseRamped": 6
-    };
+    enum ELinkedAssetsRemovalMode {
+        AfterRenderingIfSourceAssetsAreNoLongerOnDisk = 0,
+        Never = 1,
+    }
 
-    type ELoadingMode = {
-        "Default": 0,
-        "Stream": 1
-    };
+    enum ELFOShape {
+        Sine = 0,
+        Square = 1,
+        Triangle = 2,
+        SawUp = 3,
+        SawDown = 4,
+        NoiseStepped = 5,
+        NoiseRamped = 6,
+    }
 
-    type ELoudnessMeterMode = {
-        "Momentary": 0,
-        "ShorTerm": 1
-    };
+    enum ELoadingMode {
+        Default = 0,
+        Stream = 1,
+    }
+
+    enum ELoudnessMeterMode {
+        Momentary = 0,
+        ShorTerm = 1,
+    }
+
+    enum ELoudnessMeterRange {
+        EBU_9 = 0,
+        EBU_18 = 1,
+    }
+
+    enum ELoudnessMeterScale {
+        Absolute = 0,
+        Relative = 1,
+    }
+
+    enum EMeteringChannelOrder {
+        Standard = 0,
+        SeparateLFE = 1,
+        Positional = 2,
+    }
+
+    enum EMixerPortType {
+        Music = 0,
+        CopyrightMusic = 1,
+        Voice = 2,
+        ControllerSpeaker = 3,
+        Personal = 4,
+        Vibration = 5,
+        Auxiliary = 6,
+    }
+
+    enum EMultibandEqEffectFilterType {
+        Off = 0,
+        LP12dB = 1,
+        LP24dB = 2,
+        LP48dB = 3,
+        HP12dB = 4,
+        HP24dB = 8,
+        HP48dB = 16,
+        Lowshelf = 32,
+        Highshelf = 64,
+        Peaking = 128,
+        Bandpass = 256,
+        Notch = 512,
+        Allpass = 1024,
+    }
+
+    enum EOpenMode {
+        NotOpen = 0,
+        ReadOnly = 1,
+        WriteOnly = 2,
+        ReadWrite = 3,
+        Append = 4,
+        Truncate = 8,
+        Text = 16,
+        Unbuffered = 32,
+    }
+
+    enum EParameterType {
+        User = 0,
+        UserDiscrete = 1,
+        UserEnumeration = 2,
+        Distance = 3,
+        Direction = 4,
+        Elevation = 5,
+        EventConeAngle = 6,
+        EventOrientation = 7,
+        Speed = 8,
+    }
+
+    enum EPermissions {
+        ReadOwner = 16384,
+        WriteOwner = 8192,
+        ExeOwner = 4096,
+        ReadUser = 1024,
+        WriteUser = 512,
+        ExeUser = 256,
+        ReadGroup = 64,
+        WriteGroup = 32,
+        ExeGroup = 16,
+        ReadOther = 4,
+        WriteOther = 2,
+        ExeOther = 1,
+        Exe = 273,
+        Write = 8738,
+        Read = 17476,
+    }
+
+    enum EPlatformSpeakerFormat {
+        Stereo = 0,
+        Surround_5_1 = 1,
+        Surround_7_1 = 2,
+    }
+
+    enum EPlaylistMode {
+        Shuffle = 0,
+        Randomize = 1,
+        SequentialLocalScope = 2,
+        SequentialGlobalScope = 3,
+    }
+
+    enum EProcessError {
+        FailedToStart = 0,
+        Crashed = 1,
+        Timedout = 2,
+        ReadError = 3,
+        WriteError = 4,
+    }
+
+    enum EProfilerGraphType {
+        CPU_Mixer = 0,
+        CPU_Update = 1,
+        Memory_Data = 2,
+        Memory_Samples = 3,
+        Levels = 4,
+        VoicesSelf = 5,
+        VoicesTotal = 6,
+        Lifespans = 7,
+        InstancesSelf = 8,
+        InstancesTotal = 16,
+    }
+
+    enum EProfilerTableValueMode {
+        InstantaneousValue = 0,
+        AverageValue = 1,
+        MaximumValue = 2,
+        MinimumValue = 3,
+    }
+
+    enum EQuantizationInterval {
+        Off = 0,
+        _2_Bars = 1,
+        _1_Bar = 2,
+        _1_2_Note = 3,
+        _3_8_Note = 4,
+        _1_4_Note = 5,
+        _1_8_Note = 6,
+        _3_Bars = 7,
+        _4_Bars = 8,
+        _5_Bars = 9,
+        _6_Bars = 10,
+        _7_Bars = 11,
+        _8_Bars = 12,
+    }
+
+    enum ERegionLoopMode {
+        None = 0,
+        Looping = 1,
+        Magnet = 2,
+    }
+
+    enum ESampleRateMode {
+        Custom = 0,
+        OptimizedForSize = 1,
+        Preserved = 2,
+    }
+
+    enum EScrollMode {
+        DoNothing = 0,
+        ScrollVertically = 1,
+        ScrollHorizontally = 2,
+        ZoomInOut = 3,
+    }
+
+    enum ESidechainModulatorLevelMode {
+        Peak = 0,
+        RMS = 1,
+    }
+
+    enum ESnapshotBehavior {
+        Overriding = 0,
+        Blending = 1,
+    }
+
+    enum ESoundScattererSoundStealing {
+        Oldest = 0,
+        None = 1,
+    }
+
+    enum ESpeakerMode {
+        Auto = 0,
+        Mono = 1,
+        Stereo = 2,
+        Surround = 3,
+    }
+
+    enum EStartupMode {
+        OpenWelcomeDialoge = 0,
+        OpenMostRecentProject = 1,
+        OpenNewProject = 2,
+    }
+
+    enum EStereoToSurroundPanMode {
+        StereoInDistributed = 0,
+        StereoInLR = 1,
+    }
+
+    enum ETimeDisplayMode {
+        Time = 0,
+        Beats = 1,
+    }
+
+    enum ETransitionOffset {
+        None = 0,
+        Relative = 1,
+        Inverted = 2,
+    }
+
+    enum ETriggerConditionMode {
+        AND = 0,
+        OR = 1,
+    }
+
+    enum EUIAlignment {
+        AlignLeft = 1,
+        AlignRight = 2,
+        AlignHCenter = 4,
+        AlignJustify = 8,
+        AlignAbsolute = 16,
+        AlignTop = 32,
+        AlignBottom = 64,
+        AlignVCenter = 128,
+        AlignBaseline = 256,
+        AlignCenter = 132,
+    }
+
+    enum EUIAutomationTracksVisible {
+        Never = 0,
+        Always = 1,
+    }
+
+    enum EUIEchoMode {
+        Normal = 0,
+        NoEcho = 1,
+        Password = 2,
+        PasswordEchoOnEdit = 3,
+    }
+
+    enum EUILayoutType {
+        HBoxLayout = 0,
+        VBoxLayout = 1,
+        GridLayout = 2,
+    }
+
+    enum EUIModulationDrawerVisible {
+        Never = 0,
+        Always = 1,
+    }
+
+    enum EUIOrientation {
+        Horizontal = 0,
+        Vertical = 1,
+    }
+
+    enum EUISizePolicy {
+        Fixed = 0,
+        Minimum = 1,
+        Maximum = 4,
+        Preferred = 5,
+        MinimumExpanding = 3,
+        Expanding = 7,
+        Ignored = 13,
+    }
+
+    enum EUITriggerBehaviorDrawerVisible {
+        Never = 0,
+        Always = 1,
+    }
+
+    enum EUIPathType {
+        OpenFile = 0,
+        SaveFile = 1,
+        Directory = 2,
+    }
+
+    enum EUIWidgetType {
+        Spacer = 0,
+        Layout = 1,
+        Label = 2,
+        PushButton = 3,
+        LineEdit = 4,
+        TextEdit = 5,
+        ComboBox = 6,
+        CheckBox = 7,
+        Slider = 8,
+        SpinBox = 9,
+        PathLineEdit = 10,
+    }
+
+    enum EVoiceStealing {
+        Oldest = 0,
+        Quietest = 1,
+        Virtualize = 2,
+        None = 3,
+        Furthest = 4,
+    }
     
-    type ELoudnessMeterRange = {
-        "EBU+9": 0,
-        "EBU+18": 1
-    };
-
-    type ELoudnessMeterScale = {
-        "Absolute": 0,
-        "Relative": 1
-    };
-
-    type EMeteringChannelOrder = {
-        "Standard": 0,
-        "SeparateLFE": 1,
-        "Positional": 2
-    };
-
-    type EMixerPortType = {
-        "Music": 0,
-        "CopyrightMusic": 1,
-        "Voice": 2,
-        "ControllerSpeaker": 3,
-        "Personal": 4,
-        "Vibration": 5,
-        "Auxiliary": 6
-    };
-
-    type EMultibandEqEffectFilterType = {
-        "Off": 0,
-        "LP12dB": 1,
-        "LP24dB": 2,
-        "LP48dB": 3,
-        "HP12dB": 4,
-        "HP24dB": 8,
-        "HP48dB": 16,
-        "Lowshelf": 32,
-        "Highshelf": 64,
-        "Peaking": 128,
-        "Bandpass": 256,
-        "Notch": 512,
-        "Allpass": 1024
-    };
-
-    type EOpenMode = {
-        "NotOpen": 0,
-        "ReadOnly": 1,
-        "WriteOnly": 2,
-        "ReadWrite": 3,
-        "Append": 4,
-        "Truncate": 8,
-        "Text": 16,
-        "Unbuffered": 32
-    };
-
-    type EParameterType = {
-        "User": 0,
-        "UserDiscrete": 1,
-        "UserEnumeration": 2,
-        "Distance": 3,
-        "Direction": 4,
-        "Elevation": 5,
-        "EventConeAngle": 6,
-        "EventOrientation": 7,
-        "Speed": 8
-    };
-
-    type EPermissions = {
-        "ReadOwner": 16384,
-        "WriteOwner": 8192,
-        "ExeOwner": 4096,
-        "ReadUser": 1024,
-        "WriteUser": 512,
-        "ExeUser": 256,
-        "ReadGroup": 64,
-        "WriteGroup": 32,
-        "ExeGroup": 16,
-        "ReadOther": 4,
-        "WriteOther": 2,
-        "ExeOther": 1,
-        "Exe": 273,
-        "Write": 8738,
-        "Read": 17476
-    };
-
-    type EPlatformSpeakerFormat = {
-        "Stereo": 0,
-        "Surround_5.1": 1,
-        "Surround_7.1": 2
-    };
-
-    type EPlaylistMode = {
-        "Shuffle": 0,
-        "Randomize": 1,
-        "SequentialLocalScope": 2,
-        "SequentialGlobalScope": 3
-    };
-
-    // TODO(mhartung) where is this used
-    type EProcessError = {
-        "FailedToStart": 0,
-        "Crashed": 1,
-        "Timedout": 2,
-        "ReadError": 3,
-        "WriteError": 4
-    };
-
-    type EProfilerGraphType = {
-        "CPU:Mixer": 0,
-        "CPU:Update": 1,
-        "Memory:Data": 2,
-        "Memory:Samples": 3,
-        "Levels": 4,
-        "VoicesSelf": 5,
-        "VoicesTotal": 6,
-        "Lifespans": 7,
-        "InstancesSelf": 8,
-        "InstancesTotal": 16
-    };
-
-    type EProfilerTableValueMode = {
-        "InstantaneousValue": 0,
-        "AverageValue": 1,
-        "MaximumValue": 2,
-        "MinimumValue": 3
-    };
-
-    type EQuantizationInterval = {
-        "Off": 0,
-        "2_Bars": 1,
-        "1_Bar": 2,
-        "1/2_Note": 3,
-        "3/8_Note": 4,
-        "1/4_Note": 5,
-        "1/8_Note": 6,
-        "3_Bars": 7,
-        "4_Bars": 8,
-        "5_Bars": 9,
-        "6_Bars": 10,
-        "7_Bars": 11,
-        "8_Bars": 12,
-    };
-
-    type ERegionLoopMode = {
-        "None": 0,
-        "Looping": 1,
-        "Magnet": 2
-    };
-
-    type ESampleRateMode = {
-        "Custom": 0,
-        "OptimizedForSize": 1,
-        "Preserved": 2
-    };
-
-    type EScrollMode = {
-        "DoNothing": 0,
-        "ScrollVertically": 1,
-        "ScrollHorizontally": 2,
-        "ZoomInOut": 3
-    };
-
-    type ESidechainModulatorLevelMode = {
-        "Peak": 0,
-        "RMS": 1,
-    };
-
-    type ESnapshotBehavior = {
-        "Overriding": 0,
-        "Blending": 1
-    };
-
-    type ESoundScattererSoundStealing = {
-        "Oldest": 0,
-        "None": 1
-    };
-
-    type ESpeakerMode = {
-        "Auto": 0,
-        "Mono": 1,
-        "Stereo": 2,
-        "Surround": 3
-    };
-
-    type EStartupMode = {
-        "OpenWelcomeDialoge": 0,
-        "OpenMostRecentProject": 1,
-        "OpenNewProject": 2
-    };
-
-    type EStereoToSurroundPanMode = {
-        "StereoInDistributed": 0,
-        "StereoInLR": 1
-    };
-    
-    type ETimeDisplayMode = {
-        "Time": 0,
-        "Beats": 1
-    };
-
-    type ETransitionOffset = {
-        "None": 0,
-        "Relative": 1,
-        "Inverted": 2
-    };
-
-    type ETriggerConditionMode = {
-        "AND": 0,
-        "OR": 1
-    };
-
-    type EUIAlignment = {
-        "AlignLeft": 1,
-        "AlignRight": 2,
-        "AlignHCenter": 4,
-        "AlignJustify": 8,
-        "AlignAbsolute": 16,
-        "AlignTop": 32,
-        "AlignBottom": 64,
-        "AlignVCenter": 128,
-        "AlignBaseline": 256,
-        "AlignCenter": 132
-    };
-
-    type EUIAutomationTracksVisible = {
-        "Never": 0,
-        "Always": 1
-    };
-
-    type EUIEchoMode = {
-        "Normal": 0,
-        "NoEcho": 1,
-        "Password": 2,
-        "PasswordEchoOnEdit": 3
-    };
-
-    type EUILayoutType = {
-        "HBoxLayout": 0,
-        "VBoxLayout": 1,
-        "GridLayout": 2
-    };
-
-    type EUIModulationDrawerVisible = {
-        "Never": 0,
-        "Always": 1
-    };
-
-    type EUIOrientation = {
-        "Horizontal": 0,
-        "Vertical": 1
-    };
-
-    type EUISizePolicy = {
-        "Fixed": 0,
-        "Minimum": 1,
-        "Maximum": 4,
-        "Preferred": 5,
-        "MinimumExpanding": 3,
-        "Expanding": 7,
-        "Ignored": 13
-    };
-    
-    type EUITriggerBehaviorDrawerVisible = {
-        "Never": 0,
-        "Always": 1
-    };
-
-    type EUIPathType = {
-        "OpenFile": 0,
-        "SaveFile": 1,
-        "Directory": 2
-    };
-
-    type EUIWidgetType = {
-        "Spacer": 0,
-        "Layout": 1,
-        "Label": 2,
-        "PushButton": 3,
-        "LineEdit": 4,
-        "TextEdit": 5,
-        "ComboBox": 6,
-        "CheckBox": 7,
-        "Slider": 8,
-        "SpinBox": 9,
-        "PathLineEdit": 10
-    };
-
-    type EVoiceStealing = {
-        "Oldest": 0,
-        "Quietest": 1,
-        "Virtualize": 2,
-        "None": 3,
-        "Furthest": 4
-    };
 
     type EWindowAction = {
         "Copy": 0,
