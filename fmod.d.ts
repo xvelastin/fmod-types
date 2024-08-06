@@ -2730,16 +2730,16 @@ declare namespace Fmod {
         "SetDefaultTrackHeight": 98,
         "InvalidAction": 99
     };
-
-    type WindowType = 
-        | "Event Editor" 
-        | "Mixer" 
-        | "Audio Bin" 
-        | "Preset Browser" 
-        | "Event Browser" 
-        | "Mixer Routing" 
-        | "Profiler" 
-        | "Sandbox" 
-        | "Console";
-
+    
+    enum WindowType {
+        EventEditor = "Event Editor",
+        Mixer = "Mixer",
+        AudioBin = "Audio Bin",
+        PresetBrowser = "Preset Browser",
+        EventBrowser = "Event Browser",
+        MixerRouting = "Mixer Routing",
+        Profiler = "Profiler",
+        Sandbox = "Sandbox",
+        Console = "Console",
+    }    
 } 
