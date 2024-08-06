@@ -1971,7 +1971,7 @@ declare namespace Fmod {
     //     ██       ██    ██      ██           ██
     //     ██       ██    ██      ███████ ███████
 
-    enum EffectName {
+    const enum EffectName {
         ThreeEQEffect = "ThreeEQEffect",
         ChannelMixerEffect = "ChannelMixerEffect",
         ChorusEffect = "ChorusEffect",
@@ -1997,7 +1997,7 @@ declare namespace Fmod {
         LoudnessMeter = "LoudnessMeter",
     }
 
-    enum EntityName {
+    const enum EntityName {
         ADSRModulator = "ADSRModulator",
         ActionSheet = "ActionSheet",
         Asset = "Asset",
@@ -2214,25 +2214,25 @@ declare namespace Fmod {
         rotation: number;
     };
 
-    enum ModulatorType {
+    const enum ModulatorType {
         RandomizerModulator = "RandomizerModulator",
         ADSRModulator = "ADSRModulator",
         SidechainModulator = "SidechainModulator",
     }
 
-    enum SoundType {
+    const enum SoundType {
         SingleSound = "SingleSound",
         MultiSound = "MultiSound",
         ProgrammerSound = "ProgrammerSound",
     }
 
-    enum EBirdsEyeDragMode {
+    const enum EBirdsEyeDragMode {
         Minimap = 0,
         ZoomInOut = 1,
         ScrollHorizontallyOnly = 2,
     }
 
-    enum EChannelFormat {
+    const enum EChannelFormat {
         Mono = 0,
         Stereo = 1,
         Platform = 2,
@@ -2243,7 +2243,7 @@ declare namespace Fmod {
         Souround_7_1_4 = 7,
     }
 
-    enum EChannelMixEffectOutputGrouping {
+    const enum EChannelMixEffectOutputGrouping {
         None = 0,
         Mono = 1,
         Stereo = 2,
@@ -2254,7 +2254,7 @@ declare namespace Fmod {
         _7_1_4 = 7,
     }
 
-    enum ECommandType {
+    const enum ECommandType {
         StartEvent = 0,
         StopEvent = 1,
         StopEventImmediate = 2,
@@ -2262,17 +2262,17 @@ declare namespace Fmod {
         IncrementParameter = 4,
     }
 
-    enum EDataDropMode {
+    const enum EDataDropMode {
         File = 0,
         Text = 1,
     }
 
-    enum EDelayType {
+    const enum EDelayType {
         Time = 0,
         Tempo = 1,
     }
 
-    enum EDistanceRolloffType {
+    const enum EDistanceRolloffType {
         LinearSquared = 0,
         Linear = 1,
         Inverse = 2,
@@ -2280,24 +2280,24 @@ declare namespace Fmod {
         Custom = 4,
     }
 
-    enum EEncodingFormat {
+    const enum EEncodingFormat {
         Vorbis = 0,
         FADPCM = 1,
         PCM = 2,
     }
 
-    enum EEventState {
+    const enum EEventState {
         NotStopping = 0,
         Stopping = 1,
     }
 
-    enum EExtentMode {
+    const enum EExtentMode {
         Auto = 0,
         User = 1,
         Off = 2,
     }
 
-    enum EInstanceStealing {
+    const enum EInstanceStealing {
         Oldest = 0,
         Quietest = 1,
         Virtualize = 2,
@@ -2305,18 +2305,18 @@ declare namespace Fmod {
         Furthest = 4,
     }
 
-    enum ELinkedAssetsRenderMode {
+    const enum ELinkedAssetsRenderMode {
         WhenDAWProjectIsSave = 0,
         OnFmodStudioFocus = 1,
         Never = 2,
     }
 
-    enum ELinkedAssetsRemovalMode {
+    const enum ELinkedAssetsRemovalMode {
         AfterRenderingIfSourceAssetsAreNoLongerOnDisk = 0,
         Never = 1,
     }
 
-    enum ELFOShape {
+    const enum ELFOShape {
         Sine = 0,
         Square = 1,
         Triangle = 2,
@@ -2326,33 +2326,33 @@ declare namespace Fmod {
         NoiseRamped = 6,
     }
 
-    enum ELoadingMode {
+    const enum ELoadingMode {
         Default = 0,
         Stream = 1,
     }
 
-    enum ELoudnessMeterMode {
+    const enum ELoudnessMeterMode {
         Momentary = 0,
         ShorTerm = 1,
     }
 
-    enum ELoudnessMeterRange {
+    const enum ELoudnessMeterRange {
         EBU_9 = 0,
         EBU_18 = 1,
     }
 
-    enum ELoudnessMeterScale {
+    const enum ELoudnessMeterScale {
         Absolute = 0,
         Relative = 1,
     }
 
-    enum EMeteringChannelOrder {
+    const enum EMeteringChannelOrder {
         Standard = 0,
         SeparateLFE = 1,
         Positional = 2,
     }
 
-    enum EMixerPortType {
+    const enum EMixerPortType {
         Music = 0,
         CopyrightMusic = 1,
         Voice = 2,
@@ -2362,7 +2362,7 @@ declare namespace Fmod {
         Auxiliary = 6,
     }
 
-    enum EMultibandEqEffectFilterType {
+    const enum EMultibandEqEffectFilterType {
         Off = 0,
         LP12dB = 1,
         LP24dB = 2,
@@ -2378,7 +2378,7 @@ declare namespace Fmod {
         Allpass = 1024,
     }
 
-    enum EOpenMode {
+    const enum EOpenMode {
         NotOpen = 0,
         ReadOnly = 1,
         WriteOnly = 2,
@@ -2389,10 +2389,10 @@ declare namespace Fmod {
         Unbuffered = 32,
     }
 
-    enum EParameterType {
+    const enum EParameterType {
         User = 0,
         UserDiscrete = 1,
-        UserEnumeration = 2,
+        Userenumeration = 2,
         Distance = 3,
         Direction = 4,
         Elevation = 5,
@@ -2401,7 +2401,7 @@ declare namespace Fmod {
         Speed = 8,
     }
 
-    enum EPermissions {
+    const enum EPermissions {
         ReadOwner = 16384,
         WriteOwner = 8192,
         ExeOwner = 4096,
@@ -2419,20 +2419,20 @@ declare namespace Fmod {
         Read = 17476,
     }
 
-    enum EPlatformSpeakerFormat {
+    const enum EPlatformSpeakerFormat {
         Stereo = 0,
         Surround_5_1 = 1,
         Surround_7_1 = 2,
     }
 
-    enum EPlaylistMode {
+    const enum EPlaylistMode {
         Shuffle = 0,
         Randomize = 1,
         SequentialLocalScope = 2,
         SequentialGlobalScope = 3,
     }
 
-    enum EProcessError {
+    const enum EProcessError {
         FailedToStart = 0,
         Crashed = 1,
         Timedout = 2,
@@ -2440,7 +2440,7 @@ declare namespace Fmod {
         WriteError = 4,
     }
 
-    enum EProfilerGraphType {
+    const enum EProfilerGraphType {
         CPU_Mixer = 0,
         CPU_Update = 1,
         Memory_Data = 2,
@@ -2453,14 +2453,14 @@ declare namespace Fmod {
         InstancesTotal = 16,
     }
 
-    enum EProfilerTableValueMode {
+    const enum EProfilerTableValueMode {
         InstantaneousValue = 0,
         AverageValue = 1,
         MaximumValue = 2,
         MinimumValue = 3,
     }
 
-    enum EQuantizationInterval {
+    const enum EQuantizationInterval {
         Off = 0,
         _2_Bars = 1,
         _1_Bar = 2,
@@ -2476,75 +2476,75 @@ declare namespace Fmod {
         _8_Bars = 12,
     }
 
-    enum ERegionLoopMode {
+    const enum ERegionLoopMode {
         None = 0,
         Looping = 1,
         Magnet = 2,
     }
 
-    enum ESampleRateMode {
+    const enum ESampleRateMode {
         Custom = 0,
         OptimizedForSize = 1,
         Preserved = 2,
     }
 
-    enum EScrollMode {
+    const enum EScrollMode {
         DoNothing = 0,
         ScrollVertically = 1,
         ScrollHorizontally = 2,
         ZoomInOut = 3,
     }
 
-    enum ESidechainModulatorLevelMode {
+    const enum ESidechainModulatorLevelMode {
         Peak = 0,
         RMS = 1,
     }
 
-    enum ESnapshotBehavior {
+    const enum ESnapshotBehavior {
         Overriding = 0,
         Blending = 1,
     }
 
-    enum ESoundScattererSoundStealing {
+    const enum ESoundScattererSoundStealing {
         Oldest = 0,
         None = 1,
     }
 
-    enum ESpeakerMode {
+    const enum ESpeakerMode {
         Auto = 0,
         Mono = 1,
         Stereo = 2,
         Surround = 3,
     }
 
-    enum EStartupMode {
+    const enum EStartupMode {
         OpenWelcomeDialoge = 0,
         OpenMostRecentProject = 1,
         OpenNewProject = 2,
     }
 
-    enum EStereoToSurroundPanMode {
+    const enum EStereoToSurroundPanMode {
         StereoInDistributed = 0,
         StereoInLR = 1,
     }
 
-    enum ETimeDisplayMode {
+    const enum ETimeDisplayMode {
         Time = 0,
         Beats = 1,
     }
 
-    enum ETransitionOffset {
+    const enum ETransitionOffset {
         None = 0,
         Relative = 1,
         Inverted = 2,
     }
 
-    enum ETriggerConditionMode {
+    const enum ETriggerConditionMode {
         AND = 0,
         OR = 1,
     }
 
-    enum EUIAlignment {
+    const enum EUIAlignment {
         AlignLeft = 1,
         AlignRight = 2,
         AlignHCenter = 4,
@@ -2557,35 +2557,35 @@ declare namespace Fmod {
         AlignCenter = 132,
     }
 
-    enum EUIAutomationTracksVisible {
+    const enum EUIAutomationTracksVisible {
         Never = 0,
         Always = 1,
     }
 
-    enum EUIEchoMode {
+    const enum EUIEchoMode {
         Normal = 0,
         NoEcho = 1,
         Password = 2,
         PasswordEchoOnEdit = 3,
     }
 
-    enum EUILayoutType {
+    const enum EUILayoutType {
         HBoxLayout = 0,
         VBoxLayout = 1,
         GridLayout = 2,
     }
 
-    enum EUIModulationDrawerVisible {
+    const enum EUIModulationDrawerVisible {
         Never = 0,
         Always = 1,
     }
 
-    enum EUIOrientation {
+    const enum EUIOrientation {
         Horizontal = 0,
         Vertical = 1,
     }
 
-    enum EUISizePolicy {
+    const enum EUISizePolicy {
         Fixed = 0,
         Minimum = 1,
         Maximum = 4,
@@ -2595,18 +2595,18 @@ declare namespace Fmod {
         Ignored = 13,
     }
 
-    enum EUITriggerBehaviorDrawerVisible {
+    const enum EUITriggerBehaviorDrawerVisible {
         Never = 0,
         Always = 1,
     }
 
-    enum EUIPathType {
+    const enum EUIPathType {
         OpenFile = 0,
         SaveFile = 1,
         Directory = 2,
     }
 
-    enum EUIWidgetType {
+    const enum EUIWidgetType {
         Spacer = 0,
         Layout = 1,
         Label = 2,
@@ -2620,119 +2620,118 @@ declare namespace Fmod {
         PathLineEdit = 10,
     }
 
-    enum EVoiceStealing {
+    const enum EVoiceStealing {
         Oldest = 0,
         Quietest = 1,
         Virtualize = 2,
         None = 3,
         Furthest = 4,
     }
-    
 
-    type EWindowAction = {
-        "Copy": 0,
-        "Paste": 1,
-        "Delete": 2,
-        "Duplicate": 3,
-        "NewProject": 4,
-        "OpenProject": 5,
-        "CloseProject": 6,
-        "OpenMostRecentFile": 7,
-        "ClearRecentFiles": 8,
-        "Save": 9,
-        "SaveAs": 10,
-        "RevertToSaved": 11,
-        "ExitApplication": 12,
-        "ShowPreferences": 13,
-        "ShowAbout": 14,
-        "ShowWelcome": 15,
-        "ShowQuickStartTutorial": 16,
-        "ShowUserManual": 17,
-        "ShowQuestionsPage": 18,
-        "ShowSupportEmail": 19,
-        "ShowFMODio": 20,
-        "Undo": 21,
-        "Redo": 22,
-        "Find": 23,
-        "Build": 24,
-        "BuildAllPlatforms": 25,
-        "ExportGuids": 26,
-        "ImportAudioFiles": 27,
-        "RefreshModifiedAssets": 28,
-        "ValidateProject": 29,
-        "PackageProject": 30,
-        "ToggleConnectToGame": 31,
-        "ViewBrowser": 32,
-        "ViewDeck": 33,
-        "ViewProperties": 34,
-        "ZoomIn": 35,
-        "ZoomOut": 36,
-        "ZoomToFit": 37,
-        "OpenInNewWindow": 38,
-        "OpenInFileSystem": 39,
-        "OpenInExternal": 40,
-        "Split": 41,
-        "BringToFront": 42,
-        "SendToBack": 43,
-        "MoveTo": 44,
-        "MoveToCursor": 45,
-        "Rename": 46,
-        "SourceControlBrowseForProject": 47,
-        "SourceControlSync": 48,
-        "SourceControlCommit": 49,
-        "SourceControlRevert": 50,
-        "SourceControlIdentifyLocalChanges": 51,
-        "NewBrowserItem": 52,
-        "NewBrowserFolder": 53,
-        "NewMixerGroup": 54,
-        "NewMixerReturn": 55,
-        "NewParameter": 56,
-        "IncreaseDefaultTrackHeight": 57,
-        "DecreaseDefaultTrackHeight": 58,
-        "ToggleFilePlayback": 59,
-        "LoopPlayback": 60,
-        "FollowPlaybackPosition": 61,
-        "SnapToItems": 62,
-        "SnapToRuler": 63,
-        "ShowLogicTracks": 64,
-        "ShowOverlappingInstrumentsInLanes": 65,
-        "ShowMarkerLines": 66,
-        "ShowAutomationValues": 67,
-        "ShowCompactStrips": 68,
-        "ToggleBulkEdit": 69,
-        "NewTab": 70,
-        "CloseTab": 71,
-        "WindowMinimize": 72,
-        "WindowMaximize": 73,
-        "WindowCycle": 74,
-        "WindowBringAllToFront": 75,
-        "WindowClose": 76,
-        "ScriptReload": 77,
-        "MergeConflictingAsset": 78,
-        "ToggleTransitionTimelineVisibility": 79,
-        "AddTransitionTimeline": 80,
-        "RemoveTransitionTimeline": 81,
-        "SandboxToggleEmitter_01": 82,
-        "SandboxToggleEmitter_02": 83,
-        "SandboxToggleEmitter_03": 84,
-        "SandboxToggleEmitter_04": 85,
-        "SandboxToggleEmitter_05": 86,
-        "SandboxToggleEmitter_06": 87,
-        "SandboxToggleEmitter_07": 88,
-        "SandboxToggleEmitter_08": 89,
-        "SandboxToggleEmitter_09": 90,
-        "SandboxToggleEmitter_10": 91,
-        "FlattenBrowserFolders": 92,
-        "NumActionsWithoutArgs": 93,
-        "SetModuleColor": 94,
-        "OpenNewWindow": 95,
-        "OpenWindowWithArgs": 96,
-        "SetTrackHeight": 97,
-        "SetDefaultTrackHeight": 98,
-        "InvalidAction": 99
-    };
-    
-    enum WindowType {
+    const enum EWindowAction {
+        Copy = "Copy",
+        Paste = "Paste",
+        Delete = "Delete",
+        Duplicate = "Duplicate",
+        NewProject = "NewProject",
+        OpenProject = "OpenProject",
+        CloseProject = "CloseProject",
+        OpenMostRecentFile = "OpenMostRecentFile",
+        ClearRecentFiles = "ClearRecentFiles",
+        Save = "Save",
+        SaveAs = "SaveAs",
+        RevertToSaved = "RevertToSaved",
+        ExitApplication = "ExitApplication",
+        ShowPreferences = "ShowPreferences",
+        ShowAbout = "ShowAbout",
+        ShowWelcome = "ShowWelcome",
+        ShowQuickStartTutorial = "ShowQuickStartTutorial",
+        ShowUserManual = "ShowUserManual",
+        ShowQuestionsPage = "ShowQuestionsPage",
+        ShowSupportEmail = "ShowSupportEmail",
+        ShowFMODio = "ShowFMODio",
+        Undo = "Undo",
+        Redo = "Redo",
+        Find = "Find",
+        Build = "Build",
+        BuildAllPlatforms = "BuildAllPlatforms",
+        ExportGuids = "ExportGuids",
+        ImportAudioFiles = "ImportAudioFiles",
+        RefreshModifiedAssets = "RefreshModifiedAssets",
+        ValidateProject = "ValidateProject",
+        PackageProject = "PackageProject",
+        ToggleConnectToGame = "ToggleConnectToGame",
+        ViewBrowser = "ViewBrowser",
+        ViewDeck = "ViewDeck",
+        ViewProperties = "ViewProperties",
+        ZoomIn = "ZoomIn",
+        ZoomOut = "ZoomOut",
+        ZoomToFit = "ZoomToFit",
+        OpenInNewWindow = "OpenInNewWindow",
+        OpenInFileSystem = "OpenInFileSystem",
+        OpenInExternal = "OpenInExternal",
+        Split = "Split",
+        BringToFront = "BringToFront",
+        SendToBack = "SendToBack",
+        MoveTo = "MoveTo",
+        MoveToCursor = "MoveToCursor",
+        Rename = "Rename",
+        SourceControlBrowseForProject = "SourceControlBrowseForProject",
+        SourceControlSync = "SourceControlSync",
+        SourceControlCommit = "SourceControlCommit",
+        SourceControlRevert = "SourceControlRevert",
+        SourceControlIdentifyLocalChanges = "SourceControlIdentifyLocalChanges",
+        NewBrowserItem = "NewBrowserItem",
+        NewBrowserFolder = "NewBrowserFolder",
+        NewMixerGroup = "NewMixerGroup",
+        NewMixerReturn = "NewMixerReturn",
+        NewParameter = "NewParameter",
+        IncreaseDefaultTrackHeight = "IncreaseDefaultTrackHeight",
+        DecreaseDefaultTrackHeight = "DecreaseDefaultTrackHeight",
+        ToggleFilePlayback = "ToggleFilePlayback",
+        LoopPlayback = "LoopPlayback",
+        FollowPlaybackPosition = "FollowPlaybackPosition",
+        SnapToItems = "SnapToItems",
+        SnapToRuler = "SnapToRuler",
+        ShowLogicTracks = "ShowLogicTracks",
+        ShowOverlappingInstrumentsInLanes = "ShowOverlappingInstrumentsInLanes",
+        ShowMarkerLines = "ShowMarkerLines",
+        ShowAutomationValues = "ShowAutomationValues",
+        ShowCompactStrips = "ShowCompactStrips",
+        ToggleBulkEdit = "ToggleBulkEdit",
+        NewTab = "NewTab",
+        CloseTab = "CloseTab",
+        WindowMinimize = "WindowMinimize",
+        WindowMaximize = "WindowMaximize",
+        WindowCycle = "WindowCycle",
+        WindowBringAllToFront = "WindowBringAllToFront",
+        WindowClose = "WindowClose",
+        ScriptReload = "ScriptReload",
+        MergeConflictingAsset = "MergeConflictingAsset",
+        ToggleTransitionTimelineVisibility = "ToggleTransitionTimelineVisibility",
+        AddTransitionTimeline = "AddTransitionTimeline",
+        RemoveTransitionTimeline = "RemoveTransitionTimeline",
+        SandboxToggleEmitter_01 = "SandboxToggleEmitter_01",
+        SandboxToggleEmitter_02 = "SandboxToggleEmitter_02",
+        SandboxToggleEmitter_03 = "SandboxToggleEmitter_03",
+        SandboxToggleEmitter_04 = "SandboxToggleEmitter_04",
+        SandboxToggleEmitter_05 = "SandboxToggleEmitter_05",
+        SandboxToggleEmitter_06 = "SandboxToggleEmitter_06",
+        SandboxToggleEmitter_07 = "SandboxToggleEmitter_07",
+        SandboxToggleEmitter_08 = "SandboxToggleEmitter_08",
+        SandboxToggleEmitter_09 = "SandboxToggleEmitter_09",
+        SandboxToggleEmitter_10 = "SandboxToggleEmitter_10",
+        FlattenBrowserFolders = "FlattenBrowserFolders",
+        NumActionsWithoutArgs = "NumActionsWithoutArgs",
+        SetModuleColor = "SetModuleColor",
+        OpenNewWindow = "OpenNewWindow",
+        OpenWindowWithArgs = "OpenWindowWithArgs",
+        SetTrackHeight = "SetTrackHeight",
+        SetDefaultTrackHeight = "SetDefaultTrackHeight",
+        InvalidAction = "InvalidAction",
+    }
+
+    const enum WindowType {
         EventEditor = "Event Editor",
         Mixer = "Mixer",
         AudioBin = "Audio Bin",
