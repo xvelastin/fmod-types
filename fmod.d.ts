@@ -674,7 +674,8 @@ declare namespace Fmod {
         [key: string]: ManagedRelationship;
     }
 
-    type ManagedRelationshipMap = ManagedPropertyMapBase & ManagedRelationshipByName;
+    type ManagedRelationshipMap = ManagedRelationshipMapBase &
+        ManagedRelationshipByName;
 
     interface Marker extends AutomatableObject, Selectable {
         position: number;
